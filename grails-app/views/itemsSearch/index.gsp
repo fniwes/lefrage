@@ -28,8 +28,8 @@
 			<ul class="pager">
 				<li class="previous"><a id="btn-previous" href="#"><span aria-hidden="true">&larr;</span>Anterior</a></li>
 				<li class="next"><a id="btn-next" href="#">Siguiente<span aria-hidden="true">&rarr;</span></a></li>
-			</ul>
-		</nav>
+			</ul> <!-- /ul -->
+		</nav> <!-- /nav -->
 
 	</body>
 </html>
@@ -49,9 +49,9 @@
 		        	<div class="buttons col-md-6">
 		        		<a href="#" class="btn btn-primary btn-block" role="button">Compartir</a>
 		        	</div>
-		       	</div>
-        	</div>
-    	</div>
+		       	</div> <!-- /row -->
+        	</div> <!-- /caption -->
+    	</div> <!-- /thumbnail -->
     </article>
 </script>
 <script id="error_search" type="text/template">
