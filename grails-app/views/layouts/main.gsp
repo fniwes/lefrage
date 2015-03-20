@@ -14,6 +14,8 @@
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet"  href="${resource(dir: 'css', file: 'bootstrap.min.css', absolute:'true')}">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
 
     <title><g:layoutTitle default="Ima Default Title" /></title>
 
@@ -34,22 +36,65 @@
 	}	
 	.navbar-toggle{
 	}
-	.navbar-inverse .navbar-nav>li>a , .navbar-inverse .navbar-brand {
+	.navbar-inverse .navbar-nav>li>a , .navbar-inverse .navbar-brand , .input-group .form-control{
 		color: white;
 		font-size: 17px;
 		border-radius: 10px;
+		height:40px;
+		padding:10px;
+	}
+	.navbar-inverse .navbar-nav>li>a , .navbar-inverse .navbar-brand {
+		margin-top: 5px;
+		margin-left:5px;
 	}
 	.navbar-inverse .navbar-brand {
 		font-size:20px;
 		border-radius: 10px;
 	}
+
 	.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-brand:hover{
 		background-color: #dce775;
 	}
-	@font-face { 
 
-	} 
+	.input-group{
+		background-color: #dce775;
+		border: 0px;
+		border-radius: 10px;
+		margin-top: 5px;
+		margin-left:5px;
+	}
+	.input-group .form-control{
+		background-color:transparent;
+		border:0;
+		box-shadow:0 0 0; 
+	}
+	.input-group button{
+	    border:0;
+	    background:transparent;
+	    color:white;
+	    font-size:17px;
+	    height:100%;
+	}
 
+	.input-group button:hover{
+		background:transparent;
+		color:#afb42b;
+	}
+
+	.input-group .form-control::-webkit-input-placeholder { /* WebKit browsers */
+	    color:    white;
+	}
+	.input-group .form-control:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	   color:    white;
+	   opacity:  1;
+	}
+	.input-group .form-control::-moz-placeholder { /* Mozilla Firefox 19+ */
+	   color:    white;
+	   opacity:  1;
+	}
+	.input-group .form-control:-ms-input-placeholder { /* Internet Explorer 10+ */
+	   color:    white;
+	}
     </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -87,7 +132,20 @@
                     <li>
                         <a href="#">Contact</a>
                     </li>
+                    <li>
+                    	<div class="input-group">
+							<input type="text" class="form-control" placeholder="Search...">
+							<span class="input-group-btn">
+								<button type="submit" class="btn btn-default">
+									<span class="fa fa-search">
+										<span class="sr-only">Search...</span>
+									</span>
+								</button>
+							</span>
+						</div>
+                    </li>
                 </ul>
+
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -96,10 +154,10 @@
 	<g:layoutBody />
 
     <!-- jQuery Version 2.1.3 -->
-    <script src="js/jquery-2.1.3.js"></script>
+    <script src="${resource(dir: 'js', file: 'jquery-2.1.3.js', absolute:'true')}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="${resource(dir: 'bootstrap/js', file: 'bootstrap.min.js', absolute:'true')}"></script>
 
 </body>
 
