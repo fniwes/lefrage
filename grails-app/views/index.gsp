@@ -3,7 +3,7 @@
 	<head>
 		<meta name="layout" content="main"/>
 		<title>Welcome to Grails</title>
-		<style type="text/css" media="screen">
+		<!--<style type="text/css" media="screen">
 			#status {
 				background-color: #eee;
 				border: .2em solid #fff;
@@ -78,7 +78,7 @@
 					margin-top: 0;
 				}
 			}
-		</style>
+		</style>-->
 	</head>
 	<body>
 		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
