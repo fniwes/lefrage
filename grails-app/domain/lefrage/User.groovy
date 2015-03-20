@@ -8,7 +8,8 @@ class User {
 
 	Date dateOfBirth
 
-	static hasMany = [posts: Post, queries: Query, friends: User, requests: User]
+	static hasMany = [posts: Post, queries: Query, friends: User, 
+					  sendRequests: User, pendingRequests: User]
 
 	// static hasOne = [springUser: SpringUser]
 
