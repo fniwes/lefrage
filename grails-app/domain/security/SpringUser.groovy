@@ -1,5 +1,7 @@
 package security
 
+import lefrage.User
+
 class SpringUser {
 
 	transient springSecurityService
