@@ -1,0 +1,12 @@
+.search-item h3 {
+	height: 3.2em;
+	overflow: hidden;
+}
+
+.search-item .buttons {
+	text-align: center;
+} 
+
+.hide {
+	display: none;
+}
