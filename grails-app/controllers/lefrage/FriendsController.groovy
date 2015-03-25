@@ -2,11 +2,13 @@ package lefrage
 
 import grails.plugin.springsecurity.annotation.*
 import security.*
+import friends.FriendService
 
 @Secured(['ROLE_USER'])
 class FriendsController {
 
 	def springSecurityService
+	def friendService
 
     def index() { 
     	def currentSpringUser = springSecurityService.currentUser
@@ -15,13 +17,8 @@ class FriendsController {
     }
 
     def unFriend(long id){
-    	def currentSpringUser = springSecurityService.currentUser
-    	def currentUser = User.findBySpringUser(currentSpringUser)
     	def friend = User.get(id)
-    	currentUser.removeFromFriends(friend)
-    	friend.removeFromFriends(currentUser)
-    	currentUser.save(flush: true, failOnError: true)
-    	friend.save(flush: true, failOnError: true)
+    	friendService.unFriend(friend)
     	redirect(controller: "Friends",action: "index")
     }
 }

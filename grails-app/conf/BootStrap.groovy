@@ -16,6 +16,7 @@ class BootStrap {
 
 		SpringUserRole.create(adminUser, adminRole, true);
 
+
 		User us1 = new User(name: "Shai", surname: "Bianchi", dateOfBirth: new Date())
 		def springUs1 = new SpringUser(username: "shai", password: "shai")
 		springUs1.save(flush: true, failOnError: true)
@@ -30,8 +31,42 @@ class BootStrap {
 		us2.save(flush:true, failOnError: true)
 		SpringUserRole.create(springUs2, userRole, true)
 
+		User us3 = new User(name: "Pedro", surname: "Asadad", dateOfBirth: new Date())
+		def springUs3 = new SpringUser(username: "pedro", password: "pedro")
+		springUs3.save(flush: true, failOnError: true)
+		us3.springUser = springUs3
+		us3.save(flush:true, failOnError: true)
+		SpringUserRole.create(springUs3, userRole, true)
+
+		User us4 = new User(name: "Juan", surname: "Rqweqwe", dateOfBirth: new Date())
+		def springUs4 = new SpringUser(username: "juan", password: "juan")
+		springUs4.save(flush: true, failOnError: true)
+		us4.springUser = springUs4
+		us4.save(flush:true, failOnError: true)
+		SpringUserRole.create(springUs4, userRole, true)
+
+		User us5 = new User(name: "Ken", surname: "Wasdasdas", dateOfBirth: new Date())
+		def springUs5 = new SpringUser(username: "ken", password: "ken")
+		springUs5.save(flush: true, failOnError: true)
+		us5.springUser = springUs5
+		us5.save(flush:true, failOnError: true)
+		SpringUserRole.create(springUs5, userRole, true)
+
+
+		User us6 = new User(name: "Jorge", surname: "Qwgeyqe", dateOfBirth: new Date())
+		def springUs6 = new SpringUser(username: "jorge", password: "jorge")
+		springUs6.save(flush: true, failOnError: true)
+		us6.springUser = springUs6
+		us6.save(flush:true, failOnError: true)
+		SpringUserRole.create(springUs6, userRole, true)
+
 		us1.addToFriends(us2)
 		us2.addToFriends(us1)
+		us1.addToFriends(us3)
+		us1.addToFriends(us4)
+		us1.addToFriends(us5)
+		us1.addToFriends(us6)
+
 
 		def newPost1 = new Post()
 		Date newDate1 = new Date()
