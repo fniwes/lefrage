@@ -33,9 +33,10 @@
     	background-color: #d4e157;
 		border: 0;
 		min-height: 50px;
+		/*-webkit-box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.2);
+		-moz-box-shadow:    0px 5px 7px 0px rgba(0, 0, 0, 0.2);
+		box-shadow:         0px 5px 7px 0px rgba(0, 0, 0, 0.2);*/
 	}	
-	.navbar-toggle{
-	}
 	.navbar-inverse .navbar-nav>li>a , .navbar-inverse .navbar-brand , .input-group .form-control{
 		color: white;
 		font-size: 17px;
@@ -46,6 +47,7 @@
 	.navbar-inverse .navbar-nav>li>a , .navbar-inverse .navbar-brand {
 		margin-top: 5px;
 		margin-left:5px;
+		float: left;
 	}
 	.navbar-inverse .navbar-brand {
 		font-size:20px;
@@ -62,6 +64,7 @@
 		border-radius: 10px;
 		margin-top: 5px;
 		margin-left:5px;
+		float: left;
 	}
 	.input-group .form-control{
 		background-color:transparent;
@@ -81,6 +84,11 @@
 		color:#afb42b;
 	}
 
+	.input-group button:focus{
+		background:transparent;
+		color:#afb42b;
+	}
+
 	.input-group .form-control::-webkit-input-placeholder { /* WebKit browsers */
 	    color:    white;
 	}
@@ -94,6 +102,14 @@
 	}
 	.input-group .form-control:-ms-input-placeholder { /* Internet Explorer 10+ */
 	   color:    white;
+	}
+
+	.navbar-inverse .navbar-nav > .open > a:hover{
+		background-color:#DCE775;	
+	}
+
+	.navbar-inverse .navbar-nav > .open > a{
+		background-color:#DCE775;	
 	}
     </style>
 
@@ -124,28 +140,34 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Wall</a>
+                        <a href="#">Muro</a>
                     </li>
                     <li>
-                        <a href="#">Friends</a>
+                        <a href="#">Amigos</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="#">Contacto</a>
                     </li>
                     <li>
                     	<div class="input-group">
-							<input type="text" class="form-control" placeholder="Search...">
+							<input type="text" class="form-control" placeholder="Buscar...">
 							<span class="input-group-btn">
 								<button type="submit" class="btn btn-default">
 									<span class="fa fa-search">
-										<span class="sr-only">Search...</span>
+										<span class="sr-only">Buscar...</span>
 									</span>
 								</button>
 							</span>
 						</div>
                     </li>
+                    <li class="dropdown">
+                      	<a id="dropdown" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Amigos <span class='caret'></span></a>
+                  		<ul class="dropdown-menu" role="menu">
+                    		<li><a onclick="changeDropdown('Meli')">Meli</a></li>
+	                        <li><a onclick="changeDropdown('Amigos')">Amigos</a></li>
+	                    </ul>
+                    </li>
                 </ul>
-
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -158,6 +180,12 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="${resource(dir: 'bootstrap/js', file: 'bootstrap.min.js', absolute:'true')}"></script>
+
+    <script>
+    	function changeDropdown(name){
+    		$("#dropdown").html(name+" <span class='caret'></span>");
+    	}
+    </script>
 
 </body>
 
