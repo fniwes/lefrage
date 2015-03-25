@@ -14,7 +14,14 @@ class NavbarTagLib {
    	def search = { attrs ->
    		def query=""
    		println attrs.search
-   		if (attrs.search!=null)query=attrs.search
+   		if (attrs.search!=null) query=attrs.search
    		out << render(template:"/templates/search", model:[query:query])
+   	}
+
+   	def option = { attrs->
+   		println attrs.value
+   		def value="Amigos"
+   		if(attrs.value!=null) value=attrs.value
+   		out << render(template:"/templates/option", model:[value: value]) 
    	}
 }

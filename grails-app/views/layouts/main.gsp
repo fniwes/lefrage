@@ -66,12 +66,7 @@
                                     <Navbar:search search="${search}"/>
                                 </li>
                                 <li class="dropdown">
-                                    <input id="searchOption" name="option" value="Amigos" type="hidden">
-                                  	<a id="dropdown" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Amigos <span class='caret'></span></a>
-                              		<ul class="dropdown-menu" role="menu">
-                                		<li><a onclick="changeDropdown('Meli')">Meli</a></li>
-            	                        <li><a onclick="changeDropdown('Amigos')">Amigos</a></li>
-            	                    </ul>
+                                    <Navbar:option value="${option}"/>
                                 </li>
                             </ul>
                         </g:form>

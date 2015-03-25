@@ -13,10 +13,10 @@ class SearchController {
     }
 
     def friends(){
-    	[search: params.item_search]
+    	[search: params.item_search, option: params.option]
     }
 
     def meli(){
-    	[search: params.item_search]
+    	[search: params.item_search, option: params.option]
     }
 }
