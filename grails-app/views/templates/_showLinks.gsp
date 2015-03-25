@@ -1,6 +1,6 @@
 <li>
-	<a href='/${username}/Muro'>Muro</a>
+	<a href='${username}/Muro'>Muro</a>
 </li>
 <li>
-	<a href='/${username}/Amigos'>Amigos</a>
+	<a href='${username}/Amigos'>Amigos</a>
 </li>
