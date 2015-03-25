@@ -140,21 +140,21 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Wall</a>
+                        <a href="#">Muro</a>
                     </li>
                     <li>
-                        <a href="#">Friends</a>
+                        <a href="#">Amigos</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="#">Contacto</a>
                     </li>
                     <li>
                     	<div class="input-group">
-							<input type="text" class="form-control" placeholder="Search...">
+							<input type="text" class="form-control" placeholder="Buscar...">
 							<span class="input-group-btn">
 								<button type="submit" class="btn btn-default">
 									<span class="fa fa-search">
-										<span class="sr-only">Search...</span>
+										<span class="sr-only">Buscar...</span>
 									</span>
 								</button>
 							</span>
