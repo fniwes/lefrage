@@ -72,7 +72,7 @@
 
 		<script id="error_search" type="text/template">
 			<div>
-				<div class="alert alert-danger alert-dismissible" role="alert">Error en la búsqueda, por favor vuelva a intenterlo.
+				<div class="alert alert-danger alert-dismissible" role="alert">Error en la búsqueda, por favor vuelva a intentarlo.
 				</div>
 			</div>
 		</script>

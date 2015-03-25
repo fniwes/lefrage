@@ -7,6 +7,16 @@ import security.*
 class SearchController {
 
     def index() {
-    	[search: params.item_search]
+    	println params.option
+    	if(params.option=="Meli")redirect(action: "meli", params: params)
+    	else redirect(action: "friends", params: params)
+    }
+
+    def friends(){
+    	[search: params.item_search, option: params.option]
+    }
+
+    def meli(){
+    	[search: params.item_search, option: params.option]
     }
 }
