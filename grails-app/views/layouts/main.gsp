@@ -60,25 +60,30 @@
                 <ul class="nav navbar-nav">
                     <Navbar:showLinks/>
                     <li>
-    					<g:form controller="search" action="index">
-                            <div class="input-group">
-                            	<input type="text" class="form-control" placeholder="Buscar..." id="searchInput" name="item_search">
-    							<span class="input-group-btn">
-    								<button id="searchBtn" onclick="" type="submit" class="btn btn-default">
-    									<span class="fa fa-search">
-    										<span class="sr-only">Buscar...</span>
-    									</span>
-    								</button>
-    							</span>
-                            </div>
+                        <g:form controller="search" action="index">
+                            <ul class="nav navbar-nav">
+                                <li>
+                                    <div class="input-group">
+                                    	<input type="text" class="form-control" placeholder="Buscar..." id="searchInput" name="item_search">
+            							<span class="input-group-btn">
+            								<button id="searchBtn" onclick="" type="submit" class="btn btn-default">
+            									<span class="fa fa-search">
+            										<span class="sr-only">Buscar...</span>
+            									</span>
+            								</button>
+            							</span>
+                                    </div>
+                                </li>
+                                <li class="dropdown">
+                                    <input id="searchOption" name="option" value="Amigos" type="hidden">
+                                  	<a id="dropdown" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Amigos <span class='caret'></span></a>
+                              		<ul class="dropdown-menu" role="menu">
+                                		<li><a onclick="changeDropdown('Meli')">Meli</a></li>
+            	                        <li><a onclick="changeDropdown('Amigos')">Amigos</a></li>
+            	                    </ul>
+                                </li>
+                            </ul>
                         </g:form>
-                    </li>
-                    <li class="dropdown">
-                      	<a id="dropdown" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Amigos <span class='caret'></span></a>
-                  		<ul class="dropdown-menu" role="menu">
-                    		<li><a onclick="changeDropdown('Meli')">Meli</a></li>
-	                        <li><a onclick="changeDropdown('Amigos')">Amigos</a></li>
-	                    </ul>
                     </li>
                 </ul>
             </div>
@@ -90,8 +95,9 @@
 	
     <script>
     	function changeDropdown(name){
-    		$("#dropdown").html(name+" <span class='caret'></span>");
-    	}
+    	   $("#dropdown").html(name+" <span class='caret'></span>").val(name);
+    	   $("#searchOption").val(name);
+        }
     </script>
 
 </body>
