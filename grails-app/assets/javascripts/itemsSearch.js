@@ -1,5 +1,5 @@
 $(function() {
-	$("#searchBtn").click( function() {
+	$("#searchBtn").click(function() {
 		searchItems(0);
 	});
 	$("#searchInput").keypress(enterSearchItems);
@@ -18,7 +18,7 @@ function searchItems(offset) {
 	var search = $.get("https://api.mercadolibre.com/sites/MLA/search",
 						{q: $("#searchInput").val(),
 						offset: offset,
-						limit: 12,
+						limit: 9,
 						condition: "new",
 						buying_mode: "buy_it_now"});
 	search.done(showResults);
@@ -37,7 +37,7 @@ function showResults(data) {
 			$("#btn-previous").hide();	
 		};
 
-		if (data.paging.offset > data.paging.total - 12) {
+		if (data.paging.offset > data.paging.total - 9) {
 			$("#btn-next").hide();
 		} else {
 			$("#btn-next").show();
@@ -45,11 +45,11 @@ function showResults(data) {
 	});
 
 	$("#btn-next").off("click").click(function() {
-		searchItems(data.paging.offset + 12);
+		searchItems(data.paging.offset + 9);
 	});
 
 	$("#btn-previous").off("click").click(function() {
-		searchItems(data.paging.offset - 12);
+		searchItems(data.paging.offset - 9);
 	});
 };
 
@@ -70,6 +70,7 @@ function addResults (index, item) {
 		var content = $("#search_item_template").html();
 		content = content.replace("#itemTitle", res.title);
 		content = content.replace("#itemPrice", res.price);
+		//content = content.replace("#itemId", item.id);
 		content = content.replace("#urlImg", res.pictures[0].url);
 		$("#search_result").append(content);
 	});
@@ -82,3 +83,7 @@ function showError() {
 	$("#search_result").empty();
 	$("#search_result").append($("#error_search"));
 };
+
+function postArticle(id) {
+
+}
