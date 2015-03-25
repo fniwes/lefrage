@@ -1,11 +1,15 @@
 package friends
 
+import lefrage.User
 import grails.transaction.Transactional
+import grails.plugin.springsecurity.annotation.*
 
 @Transactional
 class FriendService {
 
-    def unFriend() {
+	def springSecurityService
+
+    def unFriend(friend) {
 		def currentSpringUser = springSecurityService.currentUser
     	def currentUser = User.findBySpringUser(currentSpringUser)
     	currentUser.removeFromFriends(friend)
