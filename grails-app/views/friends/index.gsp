@@ -2,18 +2,19 @@
 <html>
 	<head>
 		<meta name="layout" content="main"/>
+		<title> Amigos </title>
 	</head>
 	<body>
-		<div class="container marketing">
+		<div class="container marketing" style="width: 1200px">
 		<g:each var="friend" in="${friends}">
-			<div class="row">
-			  <div style:"background-color:red" class="col-sm-6 col-md-4">
-					<p><a href="${friend.name}${friend.id}/wall"> ${friend.name} ${friend.surname} </a></p>
-					<p>Nacimiento: ${friend.dateOfBirth}</p>
-					<p><a href="#" class="btn btn-primary" role="button">Dejar de ser amigos</a> 
-			    </div>
+			<div  class="col-md-3">
+				<div class="thumbnail" >
+						<p><a href="${friend.springUser.username}/wall"> ${friend.name} ${friend.surname} </a></p>	
+						<p>Nacimiento: ${friend.dateOfBirth}</p>	
+						<p><a href="/lefrage/friends/unFriend/${friend.id}" style="font-size: 80%" class="btn btn-primary" role="button">Dejar de ser 	amigos</a> 
+				</div>
 			</div>
 		</g:each>
-		<div>
+		</div>
 	</body>
 </html>
