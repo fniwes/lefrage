@@ -66,7 +66,7 @@
                                     <Navbar:search search="${search}"/>
                                 </li>
                                 <li class="dropdown">
-                                    <Navbar:option value="${option}"/>
+                                    <Navbar:option value="${option}" name="${option}"/>
                                 </li>
                             </ul>
                         </g:form>

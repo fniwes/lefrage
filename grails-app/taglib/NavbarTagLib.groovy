@@ -19,9 +19,13 @@ class NavbarTagLib {
    	}
 
    	def option = { attrs->
-   		println attrs.value
+   		println attrs.name
    		def value="Amigos"
-   		if(attrs.value!=null) value=attrs.value
-   		out << render(template:"/templates/option", model:[value: value]) 
+   		def name ="Amigos"
+   		if(attrs.value!=null){
+   			value=attrs.value
+   			name=attrs.name
+   		}
+   		out << render(template:"/templates/option", model:[name:name, value: value]) 
    	}
 }
