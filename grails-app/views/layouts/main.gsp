@@ -21,7 +21,12 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'styles.css', absolute:'true')}">
-
+    <style>
+	    body{
+	    	padding-top: 70px;
+	    	/* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+		}
+	</style>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
