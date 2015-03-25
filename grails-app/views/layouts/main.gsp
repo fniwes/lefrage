@@ -139,15 +139,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">Muro</a>
-                    </li>
-                    <li>
-                        <a href="#">Amigos</a>
-                    </li>
-                    <li>
-                        <a href="#">Contacto</a>
-                    </li>
+                    <Navbar:showLinks/>
                     <li>
                     	<div class="input-group">
 							<input type="text" class="form-control" placeholder="Buscar...">
