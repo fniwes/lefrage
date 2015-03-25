@@ -25,99 +25,13 @@
     <title><g:layoutTitle default="Ima Default Title" /></title>
 
     <!-- Custom CSS -->
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'styles.css', absolute:'true')}">
     <style>
-    body {
-        padding-top: 70px;
-        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-    	/*	font-family: Myriad;*/
-    	font-family: 'PT Sans', sans-serif; 
-
-    }
-
-    .navbar {
-    	background-color: #d4e157;
-		border: 0;
-		min-height: 50px;
-		/*-webkit-box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.2);
-		-moz-box-shadow:    0px 5px 7px 0px rgba(0, 0, 0, 0.2);
-		box-shadow:         0px 5px 7px 0px rgba(0, 0, 0, 0.2);*/
-	}	
-	.navbar-inverse .navbar-nav>li>a , .navbar-inverse .navbar-brand , .input-group .form-control{
-		color: white;
-		font-size: 17px;
-		border-radius: 10px;
-		height:40px;
-		padding:10px;
-	}
-	.navbar-inverse .navbar-nav>li>a , .navbar-inverse .navbar-brand {
-		margin-top: 5px;
-		margin-left:5px;
-		float: left;
-	}
-	.navbar-inverse .navbar-brand {
-		font-size:20px;
-		border-radius: 10px;
-	}
-
-	.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-brand:hover{
-		background-color: #dce775;
-	}
-
-	.input-group{
-		background-color: #dce775;
-		border: 0px;
-		border-radius: 10px;
-		margin-top: 5px;
-		margin-left:5px;
-		float: left;
-	}
-	.input-group .form-control{
-		background-color:transparent;
-		border:0;
-		box-shadow:0 0 0; 
-	}
-	.input-group button{
-	    border:0;
-	    background:transparent;
-	    color:white;
-	    font-size:17px;
-	    height:100%;
-	}
-
-	.input-group button:hover{
-		background:transparent;
-		color:#afb42b;
-	}
-
-	.input-group button:focus{
-		background:transparent;
-		color:#afb42b;
-	}
-
-	.input-group .form-control::-webkit-input-placeholder { /* WebKit browsers */
-	    color:    white;
-	}
-	.input-group .form-control:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-	   color:    white;
-	   opacity:  1;
-	}
-	.input-group .form-control::-moz-placeholder { /* Mozilla Firefox 19+ */
-	   color:    white;
-	   opacity:  1;
-	}
-	.input-group .form-control:-ms-input-placeholder { /* Internet Explorer 10+ */
-	   color:    white;
-	}
-
-	.navbar-inverse .navbar-nav > .open > a:hover{
-		background-color:#DCE775;	
-	}
-
-	.navbar-inverse .navbar-nav > .open > a{
-		background-color:#DCE775;	
-	}
-    </style>
-
+	    body{
+	    	padding-top: 70px;
+	    	/* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+		}
+	</style>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
