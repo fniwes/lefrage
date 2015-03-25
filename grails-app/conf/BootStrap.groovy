@@ -33,21 +33,23 @@ class BootStrap {
 		us1.addToFriends(us2)
 		us2.addToFriends(us1)
 
-		/*
 		def newPost1 = new Post()
 		Date newDate1 = new Date()
+		newPost1.author = us1
 		newPost1.content = 'que deje de cortarse la luz porfi'
 		newPost1.date = newDate1
 		newPost1.save(flush: true, failOnError: true)
 
 		def newPost2 = new Post()
 		Date newDate2 = new Date()
-		newPost2.content = 'es re molesto postis'
+		newPost2.author = us1
+		newPost2.content = 'postis es molesto'
 		newPost2.date = newDate2
 		newPost2.save(flush: true, failOnError: true)
 
 		def newPost3 = new Post()
 		Date newDate3 = new Date()
+		newPost3.author = us1
 		newPost3.content = 'se me apaga el wifi'
 		newPost3.date = newDate3
 		newPost3.save(flush: true, failOnError: true)
@@ -55,8 +57,7 @@ class BootStrap {
 		us1.addToPosts(newPost1)
 		us1.addToPosts(newPost2)
 		us1.addToPosts(newPost3)
-		*/
-
+		
     }
     def destroy = {
     }

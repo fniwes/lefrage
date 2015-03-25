@@ -26,7 +26,7 @@ class Stat {
 	}
 
     static constraints = {
-
+    	
     }
 
 }

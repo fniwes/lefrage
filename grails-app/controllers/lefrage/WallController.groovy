@@ -12,7 +12,8 @@ class WallController {
     def index() { 
     	def currentSpringUser = springSecurityService.currentUser
     	def currentUser = User.findBySpringUser(currentSpringUser)
-    	[currentUserPosts: currentUser.posts]
+    	println currentUser.posts
+    	[currentUserName: currentUser.name, currentUserPosts: currentUser.posts]
     }
 
 }

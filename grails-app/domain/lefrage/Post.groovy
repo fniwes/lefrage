@@ -14,7 +14,8 @@ class Post {
 	// [TODO] like
 
     static constraints = {
-
+		content blank: false
+		itemID nullable: true
     }
 
 }

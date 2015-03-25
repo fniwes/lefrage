@@ -18,7 +18,9 @@ class User {
 	// [TODO] String photoURL
 
     static constraints = {
-
+    	name blank: true
+    	surname blank: true
     }
 
 }
+	
