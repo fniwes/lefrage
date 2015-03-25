@@ -7,6 +7,8 @@ class UrlMappings {
             }
         }
 
+        "/$username/Muro"(controller: "wall", action: "index")
+        "/$username/Amigos"(controller: "friends", action: "index")
         "/"(view:"/index")
         "500"(view:'/error')
 	}
