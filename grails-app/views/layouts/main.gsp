@@ -9,6 +9,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+  
+    <asset:javascript src="application.js"/>
+  	<asset:stylesheet src="application.css"/>
+	<link rel="icon" type="image/png" href="http://developers.mercadolibre.com/wp-content/uploads/logo_puzzle_slider.png" />
+
 
     <!--<title>Bare - Start Bootstrap Template</title>-->
 
@@ -142,9 +147,9 @@
                     <Navbar:showLinks/>
                     <li>
                     	<div class="input-group">
-							<input type="text" class="form-control" placeholder="Buscar...">
+							<input type="text" class="form-control" placeholder="Buscar..." id="searchInput">
 							<span class="input-group-btn">
-								<button type="submit" class="btn btn-default">
+								<button id="searchBtn" type="submit" class="btn btn-default">
 									<span class="fa fa-search">
 										<span class="sr-only">Buscar...</span>
 									</span>
@@ -166,18 +171,51 @@
         <!-- /.container -->
     </nav>
 	<g:layoutBody />
-
-    <!-- jQuery Version 2.1.3 -->
-    <script src="${resource(dir: 'js', file: 'jquery-2.1.3.js', absolute:'true')}"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="${resource(dir: 'bootstrap/js', file: 'bootstrap.min.js', absolute:'true')}"></script>
-
+	
     <script>
     	function changeDropdown(name){
     		$("#dropdown").html(name+" <span class='caret'></span>");
     	}
     </script>
+
+    <script id="search_item_template" type="text/template">
+		<article class="col-md-4 search-item">
+	   		<div class="thumbnail">
+	    		<img src="#urlImg" width="100%" height="200">
+	        	<div class="caption">
+	            	<h3>#itemTitle</h3>
+	            	<p>$ #itemPrice</p>
+	            <hr class="featurette-divider">
+			        <div class="row">
+			        	<div class="buttons col-md-6">
+			        		<button type="button" id="btn-post" class="btn btn-primary btn-block" data-toggle="modal" data-target="#postModal" >Post</button>
+			        	</div>
+			        	<div class="buttons col-md-6">
+			        		<button class="btn btn-primary btn-block">Compartir</button>
+			        	</div>
+			       	</div> <!-- /row -->
+	        	</div> <!-- /caption -->
+	    	</div> <!-- /thumbnail -->
+	    </article>
+	</script>
+
+
+	<script id="post_item_template" type="text/template">
+		<article class="col-md-4 search-item">
+			<img src="#urlImg" width="100%" height="200">
+	    	<div class="caption">
+	        	<h3>#itemTitle</h3>
+	        	<p>$ #itemPrice</p>
+	    	</div> <!-- /caption -->
+	    </article>
+	</script>
+
+	<script id="error_search" type="text/template">
+		<div>
+			<div class="alert alert-danger alert-dismissible" role="alert">Error en la búsqueda, por favor vuelva a intenterlo.
+			</div>
+		</div>
+	</script>
 
 </body>
 
