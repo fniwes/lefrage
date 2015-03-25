@@ -60,16 +60,18 @@
                 <ul class="nav navbar-nav">
                     <Navbar:showLinks/>
                     <li>
-                    	<div class="input-group">
-							<input type="text" class="form-control" placeholder="Buscar..." id="searchInput">
-							<span class="input-group-btn">
-								<button id="searchBtn" type="submit" class="btn btn-default">
-									<span class="fa fa-search">
-										<span class="sr-only">Buscar...</span>
-									</span>
-								</button>
-							</span>
-						</div>
+    					<g:form controller="search" action="index">
+                            <div class="input-group">
+                            	<input type="text" class="form-control" placeholder="Buscar..." id="searchInput" name="item_search">
+    							<span class="input-group-btn">
+    								<button id="searchBtn" onclick="" type="submit" class="btn btn-default">
+    									<span class="fa fa-search">
+    										<span class="sr-only">Buscar...</span>
+    									</span>
+    								</button>
+    							</span>
+                            </div>
+                        </g:form>
                     </li>
                     <li class="dropdown">
                       	<a id="dropdown" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Amigos <span class='caret'></span></a>
@@ -91,45 +93,6 @@
     		$("#dropdown").html(name+" <span class='caret'></span>");
     	}
     </script>
-
-    <script id="search_item_template" type="text/template">
-		<article class="col-md-4 search-item">
-	   		<div class="thumbnail">
-	    		<img src="#urlImg" width="100%" height="200">
-	        	<div class="caption">
-	            	<h3>#itemTitle</h3>
-	            	<p>$ #itemPrice</p>
-	            <hr class="featurette-divider">
-			        <div class="row">
-			        	<div class="buttons col-md-6">
-			        		<button type="button" id="btn-post" class="btn btn-primary btn-block" data-toggle="modal" data-target="#postModal" >Post</button>
-			        	</div>
-			        	<div class="buttons col-md-6">
-			        		<button class="btn btn-primary btn-block">Compartir</button>
-			        	</div>
-			       	</div> <!-- /row -->
-	        	</div> <!-- /caption -->
-	    	</div> <!-- /thumbnail -->
-	    </article>
-	</script>
-
-
-	<script id="post_item_template" type="text/template">
-		<article class="col-md-4 search-item">
-			<img src="#urlImg" width="100%" height="200">
-	    	<div class="caption">
-	        	<h3>#itemTitle</h3>
-	        	<p>$ #itemPrice</p>
-	    	</div> <!-- /caption -->
-	    </article>
-	</script>
-
-	<script id="error_search" type="text/template">
-		<div>
-			<div class="alert alert-danger alert-dismissible" role="alert">Error en la búsqueda, por favor vuelva a intenterlo.
-			</div>
-		</div>
-	</script>
 
 </body>
 
