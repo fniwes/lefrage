@@ -139,22 +139,14 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">Wall</a>
-                    </li>
-                    <li>
-                        <a href="#">Friends</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
+                    <Navbar:showLinks/>
                     <li>
                     	<div class="input-group">
-							<input type="text" class="form-control" placeholder="Search...">
+							<input type="text" class="form-control" placeholder="Buscar...">
 							<span class="input-group-btn">
 								<button type="submit" class="btn btn-default">
 									<span class="fa fa-search">
-										<span class="sr-only">Search...</span>
+										<span class="sr-only">Buscar...</span>
 									</span>
 								</button>
 							</span>
@@ -163,8 +155,8 @@
                     <li class="dropdown">
                       	<a id="dropdown" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Amigos <span class='caret'></span></a>
                   		<ul class="dropdown-menu" role="menu">
-                    		<li><a onclick="cambiarDropdown('Meli')">Meli</a></li>
-	                        <li><a onclick="cambiarDropdown('Amigos')">Amigos</a></li>
+                    		<li><a onclick="changeDropdown('Meli')">Meli</a></li>
+	                        <li><a onclick="changeDropdown('Amigos')">Amigos</a></li>
 	                    </ul>
                     </li>
                 </ul>
@@ -182,8 +174,8 @@
     <script src="${resource(dir: 'bootstrap/js', file: 'bootstrap.min.js', absolute:'true')}"></script>
 
     <script>
-    	function cambiarDropdown(nombre){
-    		$("#dropdown").html(nombre+" <span class='caret'></span>");
+    	function changeDropdown(name){
+    		$("#dropdown").html(name+" <span class='caret'></span>");
     	}
     </script>
 
