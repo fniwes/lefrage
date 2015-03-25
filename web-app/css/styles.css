@@ -97,3 +97,11 @@
 	.navbar-inverse .navbar-nav > .open > a{
 		background-color:#DCE775;	
 	}
+
+	ul.pager{
+		position: fixed;
+		bottom: 0px;
+		right: 10px;
+		left: 10px;
+		width:100%-20px;
+	}
