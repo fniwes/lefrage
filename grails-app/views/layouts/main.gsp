@@ -10,9 +10,7 @@
     <meta name="author" content="">
     <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
   
-    <asset:javascript src="application.js"/>
-  	<asset:stylesheet src="application.css"/>
-	<link rel="icon" type="image/png" href="http://developers.mercadolibre.com/wp-content/uploads/logo_puzzle_slider.png" />
+    <link rel="icon" type="image/png" href="http://developers.mercadolibre.com/wp-content/uploads/logo_puzzle_slider.png" />
 
 
     <!--<title>Bare - Start Bootstrap Template</title>-->
@@ -21,6 +19,8 @@
     <link rel="stylesheet"  href="${resource(dir: 'css', file: 'bootstrap.min.css', absolute:'true')}">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
+    <asset:javascript src="application.js"/>
+  	<asset:stylesheet src="application.css"/>
 
     <title><g:layoutTitle default="Ima Default Title" /></title>
 
