@@ -5348,6 +5348,7 @@ a.list-group-item-danger.active:focus {
   border-bottom-left-radius: 3px;
 }
 .panel-heading + .list-group .list-group-item:first-child {
+  background-color: #bbdefb;
   border-top-width: 0;
 }
 .list-group + .panel-footer {

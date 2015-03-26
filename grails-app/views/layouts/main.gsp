@@ -58,9 +58,6 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav" style="width:90%;">
-                    <li class="logout-link">
-                        <a href="${createLink(controller:"logout",action:"index")}" style=""> Logout</a>
-                    </li>
                     <Navbar:showLinks/>
                     <li>
                         <g:form controller="search" action="index">
@@ -70,9 +67,15 @@
                                 </li>
                                 <li class="dropdown">
                                     <Navbar:option value="${option}" name="${option}"/>
-                                </li>
+                                </li>   
                             </ul>
                         </g:form>
+                    </li>
+                     <li class="logout-link">
+                        <a href="${createLink(controller:"logout",action:"index")}" style=""> Logout</a>
+                    </li>
+                    <li class="config-link">
+                        <a href='/lefrage/${username}/Config'>Config</a>
                     </li>
                 </ul>
             </div>

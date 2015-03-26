@@ -1,6 +1,6 @@
 <li>
-	<a href='/lefrage/${username}/Muro'>Muro</a>
+	<a href='/lefrage/${username}/perfil'>Perfil</a>
 </li>
 <li>
-	<a href='/lefrage/${username}/Amigos'>Amigos</a>
+	<a href='/lefrage/${username}/amigos'>Amigos</a>
 </li>
