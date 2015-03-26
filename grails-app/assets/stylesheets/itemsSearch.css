@@ -10,3 +10,7 @@
 .hide {
 	display: none;
 }
+
+.thumbnail > img {
+	height: 200px;
+}
