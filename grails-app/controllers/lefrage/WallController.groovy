@@ -14,8 +14,9 @@ class WallController {
     	def user=User.findBySpringUser(springUser)
     	def currentSpringUser = springSecurityService.currentUser
     	def currentUser = User.findBySpringUser(currentSpringUser)
+    	def sortedPosts = user.posts.sort{it.id}
     	[name: user.name, surname: user.surname, username: springUser.username, 
-    		currentUserName: currentUser.name, userPosts: user.posts]
+    		currentUserName: currentUser.name, userPosts: sortedPosts]
     }
 
     def writePost() {
