@@ -113,3 +113,26 @@
 		left: 10px;
 		width:100%-20px;
 	}
+
+	.profile-data{
+		position:fixed;
+		float:left;
+		margin-left:50px;
+	}
+
+	h3{
+		color:grey;
+	}
+
+	.btn-default{
+		background-color: #d4e157;
+		border-color: #AFB42B;
+		color:white;
+		font-size: 17px;
+	}
+
+	.btn-default:hover, .btn-default:focus{
+		background-color: #dce775;
+		border-color: #d4e157;
+		color:white;
+	}
