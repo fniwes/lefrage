@@ -23,7 +23,7 @@ class WallController {
 
     	[isAutoPost: autoPostBoolean, name: user.name,
       surname: user.surname, username: springUser.username,
-      currentUserName: currentUser.name, userPosts: user.wallPosts,
+      currentUserName: currentUser.name, userPosts: sortedPosts,
       profileDOB: user.dateOfBirth, profileFriendsCount: friendsCount]
 
     }
