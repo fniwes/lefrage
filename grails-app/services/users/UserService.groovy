@@ -12,7 +12,7 @@ class UserService {
 
     def create(name, surname, nick, password, dateOfBirth) {
 
-    	User us = new User(name: name, surname: surname, dateOfBirth: new Date())	
+    	User us = new User(name: name, surname: surname, dateOfBirth: Date.parse("yyyy/MM/dd",dateOfBirth))
     	SpringUser sp = new SpringUser(username: nick, password: password)
     	sp.save(flush: true, failOnError: true)
     	us.springUser = sp

@@ -10,9 +10,7 @@
     <meta name="author" content="">
     <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
   
-    <asset:javascript src="application.js"/>
-  	<asset:stylesheet src="application.css"/>
-	<link rel="icon" type="image/png" href="http://developers.mercadolibre.com/wp-content/uploads/logo_puzzle_slider.png" />
+    <link rel="icon" type="image/png" href="http://developers.mercadolibre.com/wp-content/uploads/logo_puzzle_slider.png" />
 
 
     <!--<title>Bare - Start Bootstrap Template</title>-->
@@ -21,6 +19,8 @@
     <link rel="stylesheet"  href="${resource(dir: 'css', file: 'bootstrap.min.css', absolute:'true')}">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
+    <asset:javascript src="application.js"/>
+  	<asset:stylesheet src="application.css"/>
 
     <title><g:layoutTitle default="Ima Default Title" /></title>
 
@@ -57,10 +57,7 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="logout-link">
-                        <a href="${createLink(controller:"logout",action:"index")}" style=""> Logout</a>
-                    </li>
+                <ul class="nav navbar-nav" style="width:90%;">
                     <Navbar:showLinks/>
                     <li>
                         <g:form controller="search" action="index">
@@ -70,9 +67,15 @@
                                 </li>
                                 <li class="dropdown">
                                     <Navbar:option value="${option}" name="${option}"/>
-                                </li>
+                                </li>   
                             </ul>
                         </g:form>
+                    </li>
+                     <li class="logout-link">
+                        <a href="${createLink(controller:"logout",action:"index")}" style=""> Logout</a>
+                    </li>
+                    <li class="config-link">
+                        <a href='/lefrage/${username}/Config'>Config</a>
                     </li>
                 </ul>
             </div>
