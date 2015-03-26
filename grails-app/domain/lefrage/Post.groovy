@@ -8,8 +8,10 @@ class Post {
 	String itemID // can be null; in the case of product sharing
 
 	Date date
+
+	User author // author of post
 	
-	static belongsTo = [author: User]
+	static belongsTo = [containingWallUser: User] // the user in whose wall this post lives
 
 	// [TODO] like
 

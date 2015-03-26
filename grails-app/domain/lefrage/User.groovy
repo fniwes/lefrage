@@ -8,14 +8,13 @@ class User {
 
 	Date dateOfBirth
 
-	static hasMany = [posts: Post, queries: Query, friends: User, 
+	static hasMany = [wallPosts: Post, queries: Query, friends: User, 
 					  sendRequests: User, pendingRequests: User]
-
-	// static hasOne = [springUser: SpringUser]
 
 	SpringUser springUser
 
 	// [TODO] String photoURL
+	static mappedBy = [wallPosts: 'containingWallUser']
 
     static constraints = {
     	name blank: true

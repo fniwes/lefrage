@@ -16,30 +16,39 @@ class WallController {
     	def currentSpringUser = springSecurityService.currentUser
     	def currentUser = User.findBySpringUser(currentSpringUser)
 
-      def sortedPosts = user.posts.sort{it.id}
+      def sortedPosts = user.wallPosts.sort{it.id}
       def autoPostBoolean = user.id == currentUser.id
       
+      def friendsCount = user.friends.size()
+
     	[isAutoPost: autoPostBoolean, name: user.name,
       surname: user.surname, username: springUser.username,
-      currentUserName: currentUser.name, userPosts: user.posts]
+      currentUserName: currentUser.name, userPosts: user.wallPosts,
+      profileDOB: user.dateOfBirth, profileFriendsCount: friendsCount]
 
     }
 
     def writePost() {
     	def urlSpringUser = SpringUser.findByUsername(params.username)
-    	def urlUser = User.findBySpringUser(urlSpringUser)
+    	def wallOwner = User.findBySpringUser(urlSpringUser)
 
-    	println urlSpringUser 
+      def currentSpringUser = springSecurityService.currentUser
+      def loggedUser = User.findBySpringUser(currentSpringUser)
+
       	Date newDate = new Date()
       	def newPost = new Post(
         	content: params.HTMLpostContent,
         	date: newDate,
-        	author: urlUser
+        	author: loggedUser,
+          containingWallUser: wallOwner
      	)
-      	newPost.save(flush: true, failOnError: true)
-      	urlUser.addToPosts(newPost)
 
-      	redirect(controller: "Wall", action: "index", params:params)
+        newPost.save(flush: true, failOnError: true)
+        wallOwner.addToWallPosts(newPost)
+        //wallOwner.save(flush: true, failOnError: true)
+
+      	redirect(controller: "Wall", action: "index", params: params)
+
     }
 
 }
