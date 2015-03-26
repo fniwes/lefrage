@@ -9,7 +9,7 @@
 		<g:each var="friend" in="${friends}">
 			<div  class="col-md-3">
 				<div class="thumbnail" >
-						<p ><a style="color: #dce775" href="/lefrage/${friend.springUser.username}/muro"> ${friend.name} ${friend.surname} </a></p>
+						<p ><a style="color: #dce775" href="/lefrage/${friend.springUser.username}/perfil"> ${friend.name} ${friend.surname} </a></p>
 						<p>Nacimiento:
 							<g:formatDate date="${friend.dateOfBirth}" format="dd/MM/yyyy"/>
 						</p>
