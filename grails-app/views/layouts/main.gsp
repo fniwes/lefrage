@@ -75,7 +75,10 @@
                         <a href="${createLink(controller:"logout",action:"index")}" style=""> Logout</a>
                     </li>
                     <li class="config-link">
-                        <a href='/lefrage/settings/index'>Configurar Cuenta</a>
+                        <a href="${createLink(controller:"settings",action:"index")}">Configurar Cuenta</a>
+                    </li>
+                    <li>    
+                        <Navbar:showRequests/>
                     </li>
                 </ul>
             </div>
@@ -85,7 +88,7 @@
     </nav>
 	<g:layoutBody />
 	
-    <script>
+    <script type="text/javascript">
     	function changeDropdown(name){
     	   $("#dropdown").html(name+" <span class='caret'></span>").val(name);
     	   $("#searchOption").val(name);
