@@ -117,7 +117,7 @@
 	.profile-data{
 		position:fixed;
 		float:left;
-		margin-left:50px;
+		margin-left:30px;
 	}
 
 	h3{
@@ -135,4 +135,16 @@
 		background-color: #dce775;
 		border-color: #d4e157;
 		color:white;
+	}
+
+	.panel-default > .panel-heading {
+	  background-color: #7dcac2;
+	}
+
+	.panel-default > .panel-heading.autopost {
+	  background-color: #bbdefb;
+	}
+
+	.panel-default > .panel-heading.ml {
+	  background-color: #fff059;
 	}
