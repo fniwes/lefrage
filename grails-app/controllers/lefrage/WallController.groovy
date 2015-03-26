@@ -16,12 +16,12 @@ class WallController {
     	def currentSpringUser = springSecurityService.currentUser
     	def currentUser = User.findBySpringUser(currentSpringUser)
 
-      def sortedPosts = user.posts.sort{it.id}
-      def autoPostBoolean = user.id == currentUser.id
+      	def sortedPosts = user.posts.sort{it.id}
+      	def autoPostBoolean = user.id == currentUser.id
       
     	[isAutoPost: autoPostBoolean, name: user.name,
-      surname: user.surname, username: springUser.username,
-      currentUserName: currentUser.name, userPosts: user.posts]
+      		surname: user.surname, username: springUser.username,
+      		currentUserName: currentUser.name, userPosts: user.posts]
 
     }
 
