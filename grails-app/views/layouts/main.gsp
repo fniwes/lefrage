@@ -75,7 +75,7 @@
                         <a href="${createLink(controller:"logout",action:"index")}" style=""> Logout</a>
                     </li>
                     <li class="config-link">
-                        <a href='/lefrage/${username}/Config'>Config</a>
+                        <a href='/lefrage/settings/index'>Configurar Cuenta</a>
                     </li>
                 </ul>
             </div>
