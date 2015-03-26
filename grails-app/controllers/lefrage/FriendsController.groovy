@@ -16,10 +16,10 @@ class FriendsController {
     	[friends: user.friends.sort{it.name}]
     }
 
-    def unFriend(long id){
+    def unfriend(long id){
         def friend = User.get(id)
         friendService.unFriend(friend)
-        redirect(controller: "Friends",action: "index")
+        render "ok"
     }
 
     def befriend(long id){
