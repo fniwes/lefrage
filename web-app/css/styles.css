@@ -117,21 +117,21 @@
 	.profile-data{
 		position:fixed;
 		float:left;
-		margin-left:30px;
+		margin-left:90px;
 	}
 
 	h3{
 		color:grey;
 	}
 
-	.btn-default{
+	.btn-default.green-btn{
 		background-color: #d4e157;
 		border-color: #AFB42B;
 		color:white;
 		font-size: 17px;
 	}
 
-	.btn-default:hover, .btn-default:focus{
+	.btn-default .green-btn:hover, .btn-default .green-btn:focus{
 		background-color: #dce775;
 		border-color: #d4e157;
 		color:white;

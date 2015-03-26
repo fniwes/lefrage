@@ -15,12 +15,13 @@
 			<h3 style="margin-top:5px">
 				${username}
 			</h3>
-			<a href="/lefrage/${username}/busquedas" class="btn btn-default" style="margin-top:0px; width:100%; margin-top:10px">
+			<a href="/lefrage/${username}/busquedas" class="btn btn-default green-btn" style="margin-top:0px; width:100%; margin-top:10px">
 				Búsquedas
 			</a>
 		</div>
 		<br>
-		<div class="well well-lg" style="width:800px;margin-left:auto;margin-right:auto;">
+		<div style="margin-right:90px">
+		<div class="well well-lg" style="width:800px;margin-left:auto;">
 			<g:form style="margin-left:auto;margin-right:auto;width:700px" method="post" controller="wall" action="writePost">
 	       		<div>
 	            	<g:textArea style="font-size:13pt" placeholder="Le post text..." class="form-control" name="HTMLpostContent"/>
@@ -33,7 +34,7 @@
 	        </g:form>
 	    </div>
     	<br/><br/>
-		<div class="well well-lg" style="width:800px;margin-left:auto;margin-right:auto;">
+		<div class="well well-lg" style="width:800px;margin-left:auto;">
 			<div style="width:700px;margin-left:auto;margin-right:auto" >
 				<g:each status="i" var="post" in="${userPosts}">
 					<div style="font-size:15pt"	class="panel panel-default">
@@ -49,6 +50,7 @@
 					</div>
 				</g:each>
 			</div>
+		</div>
 		</div>
 	</body>
 </html>
