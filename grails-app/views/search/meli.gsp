@@ -42,7 +42,7 @@
 		<script id="search_item_template" type="text/template">
 			<article class="col-md-4 search-item">
 		   		<div class="thumbnail">
-		    		<img src="#urlImg" width="100%" height="200">
+		    		<img src="#urlImg" height="200">
 		        	<div class="caption">
 		            	<h3>#itemTitle</h3>
 		            	<p>$ #itemPrice</p>

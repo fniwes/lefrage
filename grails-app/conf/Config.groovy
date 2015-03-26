@@ -116,6 +116,7 @@ log4j.main = {
            'net.sf.ehcache.hibernate'
 }
 
+grails.databinding.dateFormats = ['yyyy/MM/dd']
 
 // Added by the Spring Security Core plugin:
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'security.SpringUser'
@@ -126,6 +127,8 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/':                              ['ROLE_USER'],
 	'/index':                         ['ROLE_USER'],
 	'/index.gsp':                     ['ROLE_USER'],
+    '/user/register':                 ['permitAll'],
+    '/user/createUser':               ['permitAll'],
 	'/assets/**':                     ['permitAll'],
 	'/**/js/**':                      ['permitAll'],
 	'/**/css/**':                     ['permitAll'],
