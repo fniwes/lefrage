@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Le Muro de ${wallUserName}</title>
+		<title>Le Muro de ${name}</title>
 		<meta name="layout" content="main">
 		<style>
 			

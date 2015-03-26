@@ -46,8 +46,6 @@
 				date: $("#usr_date").val()
 			}
 
-			console.log(usr);
-
 			var promise = $.post("/lefrage/user/createUser", usr);
 
 			promise.done(function() {

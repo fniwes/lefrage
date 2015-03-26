@@ -60,6 +60,13 @@ class BootStrap {
 		us6.save(flush:true, failOnError: true)
 		SpringUserRole.create(springUs6, userRole, true)
 
+		User us7 = new User(name: "Eduardo", surname: "asdadsasd", dateOfBirth: new Date())
+		def springUs7 = new SpringUser(username: "eduardo", password: "eduardo")
+		springUs7.save(flush: true, failOnError: true)
+		us7.springUser = springUs7
+		us7.save(flush:true, failOnError: true)
+		SpringUserRole.create(springUs7, userRole, true)
+
 		us1.addToFriends(us2)
 		us2.addToFriends(us1)
 		us1.addToFriends(us3)
