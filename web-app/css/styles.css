@@ -105,3 +105,15 @@
 		left: 10px;
 		width:100%-20px;
 	}
+
+	.panel-default > .panel-heading {
+	  background-color: #7dcac2;
+	}
+
+	.panel-default > .panel-heading.autopost {
+	  background-color: #bbdefb;
+	}
+
+	.panel-default > .panel-heading.ml {
+	  background-color: #fff059;
+	}
