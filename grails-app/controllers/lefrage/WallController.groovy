@@ -20,21 +20,20 @@ class WallController {
     }
 
     def writePost() {
+    	def urlSpringUser = SpringUser.findByUsername(params.username)
+    	def urlUser = User.findBySpringUser(urlSpringUser)
 
-      def urlSpringUser = SpringUser.findByUsername(params.username)
-      def urlUser = User.findBySpringUser(urlSpringUser)
+    	println urlSpringUser 
+      	Date newDate = new Date()
+      	def newPost = new Post(
+        	content: params.HTMLpostContent,
+        	date: newDate,
+        	author: urlUser
+     	)
+      	newPost.save(flush: true, failOnError: true)
+      	urlUser.addToPosts(newPost)
 
-      Date newDate = new Date()
-      def newPost = new Post(
-        content: params.HTMLpostContent,
-        date: newDate,
-        author: urlUser)
-
-      urlUser.addToPosts(newPost)
-
-      newPost.save(flush: true, failOnError: true)
-
-      redirect(controller: "Wall", action: "index")
+      	redirect(controller: "Wall", action: "index", params:params)
     }
 
 }

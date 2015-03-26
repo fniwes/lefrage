@@ -22,12 +22,12 @@
 		<br>
 		<div style="margin-right:90px">
 		<div class="well well-lg" style="width:800px;margin-left:auto;">
-			<g:form style="margin-left:auto;margin-right:auto;width:700px" method="post" controller="wall" action="writePost">
+			<g:form style="margin-left:auto;margin-right:auto;width:700px" method="post" url="postear">
 	       		<div>
 	            	<g:textArea style="font-size:13pt" placeholder="Le post text..." class="form-control" name="HTMLpostContent"/>
 	            </div>
 	            <br/>
-	            <button class="btn btn-primary pull-right">Postear</button>
+	            <button type="submit" class="btn btn-primary pull-right">Postear</button>
 	            <p/>
 	            <button type="reset" class="btn btn-default pull-right">Borrar</button>	
 	            <br />
@@ -41,7 +41,7 @@
 				  		<div class="panel-heading ${isAutoPost ? "autopost" : (isML ? "ml" : "")}">
 				  			${post.author.name}
 				  			<div style="float:right" id="parsedDate${i}">
-			  					<g:formatDate date="${post.date}" format="yyyy-MM-dd"/>
+			  					<g:formatDate date="${post.date}" format="yyyy-MM-dd HH:mm:ss"/>
 				  			</div>
 				  		</div>
 		  				<div class="panel-body">
