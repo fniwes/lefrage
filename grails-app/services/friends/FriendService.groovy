@@ -17,4 +17,13 @@ class FriendService {
     	currentUser.save(flush: true, failOnError: true)
     	friend.save(flush: true, failOnError: true)
     }
+
+    def befriend(friend){
+    	def currentSpringUser = springSecurityService.currentUser
+    	def currentUser = User.findBySpringUser(currentSpringUser)
+    	currentUser.addToFriends(friend)
+    	friend.addToFriends(currentUser)
+    	currentUser.save(flush: true, failOnError: true)
+    	friend.save(flush: true, failOnError: true)
+    }
 }

@@ -8,14 +8,14 @@ class NavbarTagLib {
 
    	def showLinks = {
    		def username = springSecurityService.currentUser.username
-       	out << render(template:"/templates/showLinks", model:[username:username])
+       	out << render(template:"/templates/Navbar/showLinks", model:[username:username])
    	}
 
    	def search = { attrs ->
    		def query=""
    		println attrs.search
    		if (attrs.search!=null) query=attrs.search
-   		out << render(template:"/templates/search", model:[query:query])
+   		out << render(template:"/templates/Navbar/search", model:[query:query])
    	}
 
    	def option = { attrs->
@@ -26,6 +26,6 @@ class NavbarTagLib {
    			value=attrs.value
    			name=attrs.name
    		}
-   		out << render(template:"/templates/option", model:[name:name, value: value]) 
+   		out << render(template:"/templates/Navbar/option", model:[name:name, value: value]) 
    	}
 }

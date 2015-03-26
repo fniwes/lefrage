@@ -12,10 +12,6 @@ class SearchService {
     def searchPeople(query) {
         def currentSpringUser = springSecurityService.currentUser
         def user = User.findBySpringUser(currentSpringUser)
-        if (query == "")
-           return User.list()
-        else
-            return User.findAllByNameLikeOrSurnameLike("%"+query+"%",
-                    								    "%"+query+"%")
+        return User.findAllByNameLikeOrSurnameLike("%"+query+"%", "%"+query+"%")
     }
 }

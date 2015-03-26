@@ -9,11 +9,13 @@
 		<g:each var="friend" in="${friends}">
 			<div  class="col-md-3">
 				<div class="thumbnail" >
-						<p ><a style="color: #dce775" href="/lefrage/${friend.springUser.username}/perfil"> ${friend.name} ${friend.surname} </a></p>
+						<a style="color: #dce775" href="/lefrage/${friend.springUser.username}/perfil">
+							${friend.name} ${friend.surname} 
+						</a>
 						<p>Nacimiento:
 							<g:formatDate date="${friend.dateOfBirth}" format="dd/MM/yyyy"/>
 						</p>
-						<p><a href="/lefrage/friends/unFriend/${friend.id}" style="font-size: 80%;background-color: #d4e157;border-color:  #d4e157" class="btn btn-primary" role="button">Dejar de ser amigos</a> </p>
+						<Search:friendButton friend="${friend}"/>
 				</div>
 			</div>
 		</g:each>

@@ -17,8 +17,14 @@ class FriendsController {
     }
 
     def unFriend(long id){
-    	def friend = User.get(id)
-    	friendService.unFriend(friend)
-    	redirect(controller: "Friends",action: "index")
+        def friend = User.get(id)
+        friendService.unFriend(friend)
+        redirect(controller: "Friends",action: "index")
+    }
+
+    def befriend(long id){
+        def friend = User.get(id)
+        friendService.befriend(friend)
+        redirect(controller: "Friends",action: "index")
     }
 }
