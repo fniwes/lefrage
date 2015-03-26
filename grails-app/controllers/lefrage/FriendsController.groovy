@@ -19,7 +19,7 @@ class FriendsController {
     def unfriend(long id){
         def friend = User.get(id)
         friendService.unFriend(friend)
-        render "ok"
+        render "okk"
     }
 
     def befriend(long id){
