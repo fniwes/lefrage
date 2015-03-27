@@ -20,4 +20,27 @@ class UserService {
         Role role = Role.list().find{it.authority == "ROLE_USER"};
     	SpringUserRole.create(sp, role, true)
     }
+
+    def update(id, name, surname, date, password) {
+
+    	def user = User.get(id)
+        
+        println "---------------------------"
+        println user
+
+        user.name = name
+        user.dateOfBirth = Date.parse("dd/MM/yyyy", date)
+        user.surname = surname
+
+        User.withTransaction { status ->
+            if(password) {
+                def springUser = user.springUser
+                springUser.password = password
+                springUser.save(failOnError: true)
+            }
+
+            user.save(failOnError: true)
+        }
+        
+    }
 }

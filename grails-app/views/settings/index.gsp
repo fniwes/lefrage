@@ -35,7 +35,8 @@
 		function deleteUser (id) {
 			var promise = $.ajax({ 
 					type: "delete", 
-					url: "/lefrage/settings/deleteUser/" + id,
+					url: "${createLink(controller: 'settings', action: 'deleteUser')}",
+					data: id
 				});
 			promise.done(function(){
 				window.location.replace("/lefrage/logout/index");
