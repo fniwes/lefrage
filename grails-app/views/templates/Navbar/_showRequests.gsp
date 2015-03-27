@@ -1,5 +1,5 @@
 <a class="btn config-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-Solicitudes <span class="badge">${pendingRequests.size()}</span>
+Solicitudes <span id="requests" class="badge">${pendingRequests.size()}</span>
 </a>
 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 	<g:if test="${pendingRequests.size() == 0}">
