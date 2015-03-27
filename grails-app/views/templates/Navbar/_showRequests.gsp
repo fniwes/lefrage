@@ -11,7 +11,7 @@ Solicitudes <span class="badge">${pendingRequests.size()}</span>
 	<g:else>
 		<g:each var="request" in="${pendingRequests}">
 			<li role="presentation">
-				<a role="menuitem" tabindex="-1">request.name, request.surname</a>
+				<a role="menuitem" tabindex="-1">${request.name} ${request.surname}</a>
 			</li>
 		</g:each>
 	</g:else>
