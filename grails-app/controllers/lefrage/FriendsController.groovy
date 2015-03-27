@@ -16,21 +16,31 @@ class FriendsController {
     	[friends: user.friends.sort{it.name}]
     }
 
-    def unfriend(long id){
+    def unfriend(long id) {
         def friend = User.get(id)
         friendService.unFriend(friend)
         render "okk"
     }
 
-    def befriend(long id){
+    def befriend(long id) {
         def friend = User.get(id)
         friendService.befriend(friend)
         render "okk"
     }
 
-    def revert(long id){
+    def revert(long id) {
         def friend = User.get(id)
         friendService.revert(friend)
+        render "okk"
+    }
+
+    def acceptRequest(long id) {
+        friendService.accept(id)
+        render "okk"
+    }
+
+    def denyRequest(long id) {
+        friendService.deny(id)
         render "okk"
     }
 }
