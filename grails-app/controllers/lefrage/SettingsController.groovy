@@ -19,16 +19,13 @@ class SettingsController {
 
     @Secured(['permitAll'])
     def deleteUser(){
-    	def user = User.get(params.id);
-        SpringUserRole.remove(user.springUser, user.springUser);
-        user.springUser.delete(flush: true, failOnError: true);
-        user.delete(flush: true, failOnError: true);
-        redirect(controller: "settings", action: "index");
+        userService.delete()
+        render "okk"
     }
 
 	@Secured(['permitAll'])
     def updateUser() {
-        userService.update(params.id_usr, params.name, params.surname, params.date, params.password)
+        userService.update(params.name, params.surname, params.date, params.password)
         redirect(controller: "settings", action: "index")
     }
 }

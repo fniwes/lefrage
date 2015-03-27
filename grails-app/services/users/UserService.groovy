@@ -9,6 +9,7 @@ import java.util.Date
 
 @Transactional
 class UserService {
+	def springSecurityService
 
     def create(name, surname, nick, password, dateOfBirth) {
 
@@ -21,26 +22,30 @@ class UserService {
     	SpringUserRole.create(sp, role, true)
     }
 
-    def update(id, name, surname, date, password) {
+    def update(name, surname, date, password) {
+    	def currentSpringUser = springSecurityService.currentUser
+        def currentUser = User.findBySpringUser(currentSpringUser)
 
-    	def user = User.get(id)
-        
-        println "---------------------------"
-        println user
+        currentUser.name = name
+        currentUser.dateOfBirth = Date.parse("dd/MM/yyyy", date)
+        currentUser.surname = surname
 
-        user.name = name
-        user.dateOfBirth = Date.parse("dd/MM/yyyy", date)
-        user.surname = surname
-
-        User.withTransaction { status ->
-            if(password) {
-                def springUser = user.springUser
-                springUser.password = password
-                springUser.save(failOnError: true)
-            }
-
-            user.save(failOnError: true)
+        if(password) {
+            def springUser = currentUser.springUser
+            springUser.password = password
+            springUser.save(failOnError: true)
         }
+
+        currentUser.save(failOnError: true)
+    }
+
+    def delete() {
+    	def currentSpringUser = springSecurityService.currentUser
+        def currentUser = User.findBySpringUser(currentSpringUser)
+
+        SpringUserRole.removeAll(currentSpringUser, true)
         
+        currentUser.delete(flush: true, failOnError: true)
+        currentSpringUser.delete(flush: true, failOnError: true)
     }
 }
