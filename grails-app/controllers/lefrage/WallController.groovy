@@ -17,7 +17,7 @@ class WallController {
     	def currentUser = User.findBySpringUser(currentSpringUser)
 
       def sortedPosts = user.wallPosts.sort{it.date}.reverse(true)
-      def autoPostBoolean = user.id == currentUser.id
+    	def autoPostBoolean = user.id == currentUser.id
       
       def friendsCount = user.friends.size()
 
