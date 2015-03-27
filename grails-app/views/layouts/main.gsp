@@ -66,7 +66,7 @@
                                     <Navbar:search search="${search}"/>
                                 </li>
                                 <li class="dropdown">
-                                    <Navbar:option value="${option}" name="${option}"/>
+                                    <Navbar:option value="${optionValue}" name="${optionName}"/>
                                 </li>   
                             </ul>
                         </g:form>
@@ -89,9 +89,10 @@
 	<g:layoutBody />
 	
     <script type="text/javascript">
-    	function changeDropdown(name){
-    	   $("#dropdown").html(name+" <span class='caret'></span>").val(name);
-    	   $("#searchOption").val(name);
+    	function changeDropdown(name,value){
+    	   $("#dropdown").html(name+" <span class='caret'></span>");
+           $("#searchOptionValue").val(value);
+    	   $("#searchOptionName").val(name);
         }
     </script>
 
