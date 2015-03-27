@@ -72,10 +72,10 @@
                         </g:form>
                     </li>
                      <li class="logout-link">
-                        <a href="${createLink(controller:"logout",action:"index")}" style=""> Logout</a>
+                        <a href="${createLink(controller:'logout',action:'index')}" style=""> Logout</a>
                     </li>
                     <li class="config-link">
-                        <a href="${createLink(controller:"settings",action:"index")}">Configurar Cuenta</a>
+                        <a href="${createLink(controller:'settings',action:'index')}">Configurar Cuenta</a>
                     </li>
                     <li>    
                         <Navbar:showRequests/>
@@ -90,9 +90,10 @@
 	
     <script type="text/javascript">
     	function changeDropdown(name,value){
-    	   $("#dropdown").html(name+" <span class='caret'></span>");
-           $("#searchOptionValue").val(value);
-    	   $("#searchOptionName").val(name);
+            alert(value);
+        	$("#dropdown").html(name+" <span class='caret'></span>");
+            $("#searchOptionValue").val(value);
+        	$("#searchOptionName").val(name);
         }
     </script>
 
