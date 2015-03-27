@@ -31,9 +31,28 @@
 					success: function(){
 						$("#"+event.target.id).remove();
 						$("#div-friend-"+friendId).append(
-							'<a id="friend-button-'+friendId+'" href="/lefrage/friends/befriend/'+friendId+'" style="font-size: 80%;background-color: #d4e157;" class="btn btn-default green-btn" role="button">Ser amigos</a>'
+							'<a id="friend-button-'+friendId+'" onclick="return befriend(event,'+friendId+')" href="/lefrage/friends/befriend/'+friendId+'" style="font-size: 80%;background-color: #d4e157;" class="btn btn-default green-btn" role="button">Ser amigos</a>'
 						);
 						//Convierte el boton de desamigarse a amigarse (de manera asquerosa, 
+						//podria usarse de nuevo el template en vez de hacer esto)
+					}
+				});
+				return false;
+			}
+
+			function befriend(event,friendId){
+				var href = $(event.target).attr("href");
+				console.log(href);
+				$.ajax({
+					method:"POST",
+					url: href,
+					success: function(){
+						$("#"+event.target.id).remove();
+						alert("Solicitud enviada!");
+						$("#div-friend-"+friendId).append(
+							'<a id="friend-button-'+friendId+'" onclick="return unfriend(event,'+friendId+')" href="/lefrage/friends/revert/'+friendId+'" style="font-size: 80%;background-color: #d4e157;" class="btn btn-default green-btn" role="button">Revocar solicitud</a>'
+						);
+						//Convierte el boton de amigarse a revertir solicitud (de manera asquerosa, 
 						//podria usarse de nuevo el template en vez de hacer esto)
 					}
 				});

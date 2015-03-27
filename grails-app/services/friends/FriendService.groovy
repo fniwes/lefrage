@@ -20,10 +20,20 @@ class FriendService {
 
     def befriend(friend){
     	def currentSpringUser = springSecurityService.currentUser
+        def currentUser = User.findBySpringUser(currentSpringUser)
+        currentUser.addToSentRequests(friend)
+        friend.addToPendingRequests(currentUser)
+        currentUser.save(flush: true, failOnError: true)
+        friend.save(flush: true, failOnError: true)
+    }
+
+    def revert(friend){
+        def currentSpringUser = springSecurityService.currentUser
     	def currentUser = User.findBySpringUser(currentSpringUser)
-    	currentUser.addToFriends(friend)
-    	friend.addToFriends(currentUser)
+    	currentUser.removeFromSentRequests(friend)
+    	friend.removeFromPendingRequests(currentUser)
     	currentUser.save(flush: true, failOnError: true)
     	friend.save(flush: true, failOnError: true)
+        
     }
 }

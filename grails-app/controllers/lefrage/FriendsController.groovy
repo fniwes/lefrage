@@ -25,6 +25,12 @@ class FriendsController {
     def befriend(long id){
         def friend = User.get(id)
         friendService.befriend(friend)
-        redirect(controller: "Friends",action: "index")
+        render "okk"
+    }
+
+    def revert(long id){
+        def friend = User.get(id)
+        friendService.revert(friend)
+        render "okk"
     }
 }
