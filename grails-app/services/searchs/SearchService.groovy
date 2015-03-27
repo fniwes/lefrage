@@ -2,7 +2,7 @@ package searchs
 
 import grails.transaction.Transactional
 import grails.plugin.springsecurity.annotation.*
-import lefrage.User
+import lefrage.*
 
 @Transactional
 class SearchService {
@@ -13,5 +13,12 @@ class SearchService {
         def currentSpringUser = springSecurityService.currentUser
         def user = User.findBySpringUser(currentSpringUser)
         return User.findAllByNameLikeOrSurnameLike("%"+query+"%", "%"+query+"%")
+    }
+
+    def favourite(queryString){
+    	def query = new Query(queryString: queryString)
+        def currentSpringUser = springSecurityService.currentUser
+        def currentUser = User.findBySpringUser(currentSpringUser)
+        currentUser.addToQueries(query)
     }
 }

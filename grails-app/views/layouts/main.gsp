@@ -90,7 +90,6 @@
 	
     <script type="text/javascript">
     	function changeDropdown(name,value){
-            alert(value);
         	$("#dropdown").html(name+" <span class='caret'></span>");
             $("#searchOptionValue").val(value);
         	$("#searchOptionName").val(name);

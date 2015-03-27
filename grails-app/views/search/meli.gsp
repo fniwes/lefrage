@@ -11,8 +11,15 @@
 
 		<nav>
 			<ul class="pager">
-				<li class="previous"><a id="btn-previous" href="#"><span aria-hidden="true">&larr;</span>Anterior</a></li>
-				<li class="next"><a id="btn-next" href="#">Siguiente<span aria-hidden="true">&rarr;</span></a></li>
+				<li class="previous">
+					<a id="btn-previous" href="#"><span aria-hidden="true">&larr;</span>Anterior</a>
+				</li>
+				<li class="next">
+					<a id="btn-next" href="#">Siguiente<span aria-hidden="true">&rarr;</span></a>
+				</li>
+				<li class="next">
+					<a id="btn-favourite" href="#">Favoritear<span aria-hidden="true"></span></a>
+				</li>
 			</ul> <!-- /ul -->
 		</nav> <!-- /nav -->
 
@@ -72,7 +79,8 @@
 
 		<script id="error_search" type="text/template">
 			<div>
-				<div class="alert alert-danger alert-dismissible" role="alert">Error en la búsqueda, por favor vuelva a intentarlo.
+				<div class="alert alert-danger alert-dismissible" role="alert">
+					Error en la búsqueda, por favor vuelva a intentarlo.
 				</div>
 			</div>
 		</script>

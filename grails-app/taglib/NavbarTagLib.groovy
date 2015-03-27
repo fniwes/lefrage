@@ -31,7 +31,6 @@ class NavbarTagLib {
    	}
 
    	def option = { attrs ->
-   		println attrs.name
    		def value = "Amigos"
    		def name ="Personas"
    		if(attrs.value != null){

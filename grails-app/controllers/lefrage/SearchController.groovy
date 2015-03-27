@@ -7,6 +7,7 @@ import searchs.SearchService
 @Secured(['ROLE_USER'])
 class SearchController {
 
+    def springSecurityService
     def searchService
 
     def index() {
@@ -22,5 +23,9 @@ class SearchController {
 
     def meli(){
     	[search: params.item_search, optionName: params.optionName, optionValue: params.optionValue]
+    }
+
+    def favourite(queryString){
+        searchService.favourite(queryString)
     }
 }
