@@ -25,17 +25,17 @@
 					<input class="form-control" type="text" value="${formatDate(date: user.dateOfBirth, format: 'dd/MM/yyyy')}" placeholder="Ingrese la fecha aaaa/mm/dd" name="date" id="usr_date"/>
 				</div>
 				<div style="text-align: right">
-					<button type="button" onclick="updateUser(${user.id})" class="btn btn-primary" id="btn-acept">Aceptar Cambios</button>
-					<a type="button" onclick="deleteUser(${user.id})" class="btn btn-danger">Eliminar Usuario</a>
+					<button type="button" onclick="updateUser()" class="btn btn-primary" id="btn-acept">Aceptar Cambios</button>
+					<a type="button" onclick="deleteUser()" class="btn btn-danger">Eliminar Usuario</a>
 				</div>
 		</form>
 		</div><!-- /container marketing -->	
 
 	<script type="text/javascript">
-		function deleteUser (id) {
+		function deleteUser () {
 			var promise = $.ajax({ 
 					type: "delete", 
-					url: "/lefrage/settings/deleteUser/" + id,
+					url: "${createLink(controller: 'settings', action: 'deleteUser')}"
 				});
 			promise.done(function(){
 				window.location.replace("/lefrage/logout/index");
@@ -48,7 +48,6 @@
 				surname: $("#usr_surname").val(),
 				password: $("#usr_password").val(),
 				date: $("#usr_date").val(),
-				id_usr: id
 			}
 
 			var promise = $.ajax({

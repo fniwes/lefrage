@@ -66,16 +66,16 @@
                                     <Navbar:search search="${search}"/>
                                 </li>
                                 <li class="dropdown">
-                                    <Navbar:option value="${option}" name="${option}"/>
+                                    <Navbar:option value="${optionValue}" name="${optionName}"/>
                                 </li>   
                             </ul>
                         </g:form>
                     </li>
                      <li class="logout-link">
-                        <a href="${createLink(controller:"logout",action:"index")}" style=""> Logout</a>
+                        <a href="${createLink(controller:'logout',action:'index')}" style=""> Logout</a>
                     </li>
                     <li class="config-link">
-                        <a href="${createLink(controller:"settings",action:"index")}">Configurar Cuenta</a>
+                        <a href="${createLink(controller:'settings',action:'index')}">Configurar Cuenta</a>
                     </li>
                     <li>    
                         <Navbar:showRequests/>
@@ -89,9 +89,11 @@
 	<g:layoutBody />
 	
     <script type="text/javascript">
-    	function changeDropdown(name){
-    	   $("#dropdown").html(name+" <span class='caret'></span>").val(name);
-    	   $("#searchOption").val(name);
+    	function changeDropdown(name,value){
+            alert(value);
+        	$("#dropdown").html(name+" <span class='caret'></span>");
+            $("#searchOptionValue").val(value);
+        	$("#searchOptionName").val(name);
         }
     </script>
 
