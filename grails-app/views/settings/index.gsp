@@ -17,12 +17,8 @@
 					<input class="form-control" type="text" value="${user.surname}" pattern="[A-Za-z]+" placeholder="Ingrese el apellido" name="surname" id="usr_surname"/>
 				</div>
 				<div class="form-group">
-					<label>Usuario</label>
-					<input class="form-control" type="text" value="${user.springUser.username}" pattern="[A-Za-z]+" placeholder="Ingrese el usuario" name="nick" id="usr_nick"/>
-				</div>
-				<div class="form-group">
 					<label>Contraseña</label>
-					<input class="form-control" type="password" value="${user.springUser.password}" pattern="[A-Za-z]+" placeholder="Ingrese la contraseña" name="password" id="usr_password"/>
+					<input class="form-control" type="password" value="" pattern="[A-Za-z]+" placeholder="Ingrese la contraseña (sólo si desea cambiarla)" name="password" id="usr_password"/>
 				</div>
 				<div class="form-group">
 					<label>Nacimiento</label>
@@ -50,7 +46,6 @@
 			var usr = {
 				name: $("#usr_name").val(),
 				surname: $("#usr_surname").val(),
-				nick: $("#usr_nick").val(),
 				password: $("#usr_password").val(),
 				date: $("#usr_date").val(),
 				id_usr: id
@@ -58,7 +53,7 @@
 
 			var promise = $.ajax({
 				type: "post",
-				url: "/lefrage/user/updateUser",
+				url: "${createLink(controller: 'settings', action: 'updateUser')}",
 				data: usr
 			});
 

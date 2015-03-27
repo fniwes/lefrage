@@ -9,8 +9,11 @@ class SearchTagLib {
 
 	def friendButton = { attrs ->
       def currentSpringUser = springSecurityService.currentUser
-      if(User.findBySpringUser(currentSpringUser)!=attrs.friend){
-         if(User.findBySpringUser(currentSpringUser).friends.find{it==attrs.friend})
+      def currentUser = User.findBySpringUser(currentSpringUser) 
+      if(currentUser!=attrs.friend){
+         if(currentUser.sentRequests.find{it==attrs.friend})
+            out << render(template: "/templates/Search/sentRequestButton", model:[friend:attrs.friend])
+         else if(currentUser.friends.find{it==attrs.friend})
             out << render(template: "/templates/Search/unfriendButton", model:[friend:attrs.friend])
          else
             out << render(template: "/templates/Search/friendButton", model:[friend:attrs.friend])

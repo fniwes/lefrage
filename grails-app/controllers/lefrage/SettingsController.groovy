@@ -24,23 +24,25 @@ class SettingsController {
     }
 
 	@Secured(['permitAll'])
-    def updateUser(args){
-    	println args
+    def updateUser(){
+    	println params
 
-    	def user = User.get(args.id_usr)
-        user.name = args.name
-        user.surname = args.surname
-        user.dateOfBirth = args.date
-        user.surname = args.surname
+    	def user = User.get(params.id_usr)
+        user.name = params.name
+        user.surname = params.surname
+        user.dateOfBirth = Date.parse("dd/MM/yyyy", params.date)
+        user.surname = params.surname
 
-        def sp = SpringUser.get(args.springUser.id)
-        sp.username = args.nick
-        sp.password = args.password
+        User.withTransaction { status ->
+            if(params.password) {
+                def springUser = user.springUser
+                springUser.password = params.password
+                springUser.save(failOnError: true)
+            }
 
-    	sp.save(flush: true, failOnError: true)
-    	user.springUser = sp
-    	user.save(flush: true, failOnError: true)
-
+            user.save(failOnError: true)
+        }
+        
         redirect(controller: "settings", action: "index")
     }
 }

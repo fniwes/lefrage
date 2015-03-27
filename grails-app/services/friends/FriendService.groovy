@@ -18,12 +18,49 @@ class FriendService {
     	friend.save(flush: true, failOnError: true)
     }
 
-    def befriend(friend){
+    def befriend(friend) {
     	def currentSpringUser = springSecurityService.currentUser
+        def currentUser = User.findBySpringUser(currentSpringUser)
+        currentUser.addToSentRequests(friend)
+        friend.addToPendingRequests(currentUser)
+        currentUser.save(flush: true, failOnError: true)
+        friend.save(flush: true, failOnError: true)
+    }
+
+    def revert(friend) {
+        def currentSpringUser = springSecurityService.currentUser
     	def currentUser = User.findBySpringUser(currentSpringUser)
-    	currentUser.addToFriends(friend)
-    	friend.addToFriends(currentUser)
+    	currentUser.removeFromSentRequests(friend)
+    	friend.removeFromPendingRequests(currentUser)
     	currentUser.save(flush: true, failOnError: true)
     	friend.save(flush: true, failOnError: true)
+        
+    }
+
+    def accept(id) {
+        def currentSpringUser = springSecurityService.currentUser
+        def currentUser = User.findBySpringUser(currentSpringUser)
+        def friendUser = User.get(id)
+
+        currentUser.removeFromPendingRequests(friendUser)
+        friendUser.removeFromSentRequests(currentUser)
+
+        currentUser.addToFriends(friendUser)
+        friendUser.addToFriends(currentUser)        
+
+        currentUser.save(flush: true, failOnError: true)
+        friendUser.save(flush: true, failOnError: true)
+    }
+
+    def deny(id) {
+        def currentSpringUser = springSecurityService.currentUser
+        def currentUser = User.findBySpringUser(currentSpringUser)
+        def friendUser = User.get(id)
+
+        currentUser.removeFromPendingRequests(friendUser)
+        friendUser.removeFromSentRequests(currentUser)
+
+        currentUser.save(flush: true, failOnError: true)
+        friendUser.save(flush: true, failOnError: true)
     }
 }

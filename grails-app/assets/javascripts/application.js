@@ -8,6 +8,7 @@
 //= require jquery
 //= require bootstrap
 //= require itemSearch
+//= require requestsHandler
 //= require_tree .
 //= require_self
 
