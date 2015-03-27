@@ -58,7 +58,7 @@
 
 			var promise = $.ajax({
 				type: "post",
-				url: "/lefrage/settings/updateUser",
+				url: "${createLink(controller: 'settings', action: 'updateUser')}",
 				data: usr
 			});
 
