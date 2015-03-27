@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Le Muro de ${name}</title>
+		<title>Le Perfil de ${name}</title>
 		<meta name="layout" content="main">
 		<style>
 			
@@ -43,23 +43,25 @@
 	        </form>
 	    </div>
     	<br/><br/>
-		<div class="well well-lg" style="width:800px;margin-left:auto;">
-			<div style="width:700px;margin-left:auto;margin-right:auto" >
-				<g:each status="i" var="post" in="${userPosts}">
-					<div style="font-size:15pt"	class="panel panel-default">
-				  		<div class="panel-heading ${isAutoPost ? "autopost" : (post.itemID ? "ml" : "")}">
-				  			${post.author.name}
-				  			<div style="float:right" id="parsedDate${i}">
-			  					<g:formatDate date="${post.date}" format="yyyy-MM-dd HH:mm:ss"/>
-				  			</div>
-				  		</div>
-		  				<div class="panel-body">
-		    				${post.content}
-		  				</div>
-					</div>
-				</g:each>
+    	<g:if test="${userPosts.size() != 0}">
+			<div class="well well-lg" style="width:800px;margin-left:auto;">
+				<div style="width:700px;margin-left:auto;margin-right:auto" >
+					<g:each status="i" var="post" in="${userPosts}">
+						<div style="font-size:15pt"	class="panel panel-default">
+					  		<div class="panel-heading ${isAutoPost ? "autopost" : (post.itemID ? "ml" : "")}">
+					  			${post.author.name}
+					  			<div style="float:right" id="parsedDate${i}">
+				  					<g:formatDate date="${post.date}" format="yyyy-MM-dd HH:mm:ss"/>
+					  			</div>
+					  		</div>
+			  				<div class="panel-body">
+			    				${post.content}
+			  				</div>
+						</div>
+					</g:each>
+				</div>
 			</div>
-		</div>
+		</g:if>
 		</div>
 	</body>
 </html>
