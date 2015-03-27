@@ -57,9 +57,9 @@ function addResults (index, item) {
 	var search_item = $.get("https://api.mercadolibre.com/items/"+item.id);
 	search_item.done(function(res) {		
 		var content = $("#search_item_template").html();
-		content = content.replace("#itemTitle", res.title);
-		content = content.replace("#itemPrice", res.price);
-		content = content.replace("#urlImg", res.pictures[0].url);
+		content = content.replace(/#itemTitle/g, res.title);
+		content = content.replace(/#itemPrice/g, res.price);
+		content = content.replace(/#urlImg/g, res.pictures[0].url);
 		$("#search_result").append(content);
 	});
 	search_item.fail(showError);
