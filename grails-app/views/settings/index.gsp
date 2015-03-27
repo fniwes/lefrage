@@ -58,7 +58,7 @@
 
 			var promise = $.ajax({
 				type: "post",
-				url: "/lefrage/user/updateUser",
+				url: "/lefrage/settings/updateUser",
 				data: usr
 			});
 
