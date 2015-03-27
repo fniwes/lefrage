@@ -16,6 +16,13 @@ class WallController {
     	def currentSpringUser = springSecurityService.currentUser
     	def currentUser = User.findBySpringUser(currentSpringUser)
 
+      // currentUser no puede acceder a user si no son amigos
+      if (user.friends.find{it == currentUser} == null) {
+        render("No sos amigo")
+        sleep(1000)
+        //redirect(controller: "wall", action: "index")
+      }
+
       def sortedPosts = user.wallPosts.sort{it.date}.reverse(true)
     	def autoPostBoolean = user.id == currentUser.id
       

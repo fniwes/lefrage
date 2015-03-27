@@ -7,6 +7,7 @@
 //
 //= require jquery
 //= require bootstrap
+//= require postProduct
 //= require itemSearch
 //= require requestsHandler
 //= require_tree .

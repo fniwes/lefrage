@@ -31,16 +31,15 @@
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						<h3 class="modal-title" id="postLabel">Contenido Post</h3>
 					</div>
-		      		<div id="post_result">
-		      		</div>
+		      		<div id="post_result"></div>
 		      		<g:form method="post" controller="empleados" action="agregarEmpleado">
 				        <div>
-		                    <g:textArea class="form-control" id="postContent" name="text"/>
+		                    <g:textArea class="form-control" style="width:300px" id="postContent" name="text"/>
 		                </div>
 		            </g:form>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-						<button type="button" class="btn btn-primary">Post</button>
+						<button onclick="postProduct()" type="button" class="btn btn-primary">Post</button>
 					</div>
 				</div> <!-- /modal-content -->
 			</div> <!-- /modal-dialog -->
@@ -56,7 +55,7 @@
 		            <hr class="featurette-divider">
 				        <div class="row">
 				        	<div class="buttons col-md-6">
-				        		<button type="button" id="btn-post" class="btn btn-primary btn-block" data-toggle="modal" data-target="#postModal" >Post</button>
+				        		<button type="button" id="btn-post" class="btn btn-primary btn-block" data-toggle="modal" data-target="#postModal" onclick="completePostTemplate('#urlImg', '#itemTitle', #itemPrice)" >Post</button>
 				        	</div>
 				        	<div class="buttons col-md-6">
 				        		<button class="btn btn-primary btn-block">Compartir</button>
