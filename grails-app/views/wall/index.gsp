@@ -22,9 +22,11 @@
 				<h3 style="margin-top:5px">
 					Amigos: ${profileFriendsCount}
 				</h3>
-				<a href="/lefrage/${username}/busquedas" class="btn btn-default mlblue-btn" style="margin-top:0px; width:100%; margin-top:10px">
-					Mis búsquedas
-				</a>
+					<g:if test="${isAutoPost}">
+					<a href="/lefrage/${username}/busquedas" class="btn btn-default mlblue-btn" style="margin-top:0px; width:100%; margin-top:10px">
+						Mis búsquedas
+					</a>
+				</g:if>
 			</div>
 		</div>
 		<div style="margin-right:90px">

@@ -115,8 +115,6 @@
 	}
 
 	.profile-data{
-		position:fixed;
-		float:left;
 		margin-left:90px;
 	}
 
@@ -127,6 +125,13 @@
 	.btn-default.green-btn{
 		background-color: #d4e157;
 		border-color: #AFB42B;
+		color:white;
+		font-size: 17px;
+	}
+
+	.btn-default.mlblue-btn{
+		background-color: #4355D2;
+		border-color: #4355D2;
 		color:white;
 		font-size: 17px;
 	}
@@ -147,4 +152,12 @@
 
 	.panel-default > .panel-heading.ml {
 	  background-color: #fff059;
+	}
+
+	.well-lg.profile {
+	position:fixed;
+	float:left;
+	  padding: 24px;
+	  border-radius: 6px;
+	  background-color: white;
 	}
