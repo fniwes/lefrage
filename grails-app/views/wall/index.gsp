@@ -8,7 +8,7 @@
 		</style>
 	</head>
 	<body>
-		<div class="well well-lg profile" style="width:400px;margin-left:40px;position:fixed;float:left">
+		<div class="well well-lg profile" style="width:27%;margin-left:60px;position:fixed;float:left">
 			<div class="profile-data" style="margin-left:auto; margin-right:auto">
 				<h2 style="margin-bottom:0px">
 					${name} ${surname}
@@ -29,7 +29,7 @@
 				</g:if>
 			</div>
 		</div>
-		<div style="margin-right:90px">
+		<div style="margin-right:60px;width:67%	;float:right">
 		<div class="well well-lg" style="width:800px;margin-left:auto;">
 			<form style="margin-left:auto;margin-right:auto;width:700px" method="post" action="${createLink(controller: "wall", action: "writePost", params: [username: username])}">
 	       		<div>
