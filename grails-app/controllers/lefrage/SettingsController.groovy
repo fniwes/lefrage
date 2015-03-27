@@ -33,13 +33,16 @@ class SettingsController {
         user.dateOfBirth = Date.parse("dd/MM/yyyy", params.date)
         user.surname = params.surname
 
-        if(params.password) {
-            def springUser = user.springUser
-            springUser.password = params.password
-            springUser.save(failOnError: true)
-        }
+        User.withTransaction { status ->
+            if(params.password) {
+                def springUser = user.springUser
+                springUser.password = params.password
+                springUser.save(failOnError: true)
+            }
 
-    	user.save(flush: true, failOnError: true)
+            user.save(failOnError: true)
+        }
+        
         redirect(controller: "settings", action: "index")
     }
 }
