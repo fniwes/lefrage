@@ -8,6 +8,6 @@ function completePostTemplate(urlImg, itemTitle, itemPrice) {
 	$("#post_result").append(template);
 };
 
-function postProduct() {
+function postProduct(urlImg, itemTitle, itemPrice) {
 
 };

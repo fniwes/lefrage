@@ -43,7 +43,7 @@ function showResults(data) {
 		searchItems(data.paging.offset - 9, data.query);
 	});
 
-	$("#btn-favourite").off("click").click(function() {
+/*	$("#btn-favourite").off("click").click(function() {
 		$.ajax({
 			method:"POST",
 			url: ,
@@ -51,7 +51,7 @@ function showResults(data) {
 
 			}
 		});
-	});
+	});*/
 };
 
 function fetchItemData(data) {
@@ -69,7 +69,6 @@ function fetchItemData(data) {
 			
 function addResults (index, item) {
 	var search_item = $.get("https://api.mercadolibre.com/items/"+item.id);
-	var content;
 	search_item.done(function(res) {		
 		var content = $("#search_item_template").html();
 		content = content.replace(/#itemTitle/g, res.title);

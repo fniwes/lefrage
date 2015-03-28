@@ -31,15 +31,18 @@
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						<h3 class="modal-title" id="postLabel">Contenido Post</h3>
 					</div>
-		      		<div id="post_result"></div>
 		      		<g:form method="post" controller="empleados" action="agregarEmpleado">
 				        <div>
-		                    <g:textArea class="form-control" style="width:300px" id="postContent" name="text"/>
+		                    <g:textArea class="form-control" id="postContent" name="text"/>
 		                </div>
 		            </g:form>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-						<button onclick="postProduct()" type="button" class="btn btn-primary">Post</button>
+		      			<div id="post_result"></div>
+		      			<div class="row"></div>
+		      			<div>
+							<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+							<button onclick="postProduct()" type="button" class="btn btn-primary">Post</button>
+		      			</div>
 					</div>
 				</div> <!-- /modal-content -->
 			</div> <!-- /modal-dialog -->
@@ -67,13 +70,16 @@
 		</script>
 		
 		<script id="post_item_template" type="text/template">
-			<article class="col-md-4 search-item">
-				<img src="#urlImg" width="100%" height="200">
+			<article class="col-md-6 search-item">
+					<img src="#urlImg" width="100%" height="200">
+		    </article>
+			<article class="col-md-6 search-item">
 		    	<div class="caption">
 		        	<h3>#itemTitle</h3>
 		        	<p>$ #itemPrice</p>
 		    	</div> <!-- /caption -->
 		    </article>
+		    
 		</script>
 
 		<script id="error_search" type="text/template">
