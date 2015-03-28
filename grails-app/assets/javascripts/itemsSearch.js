@@ -3,22 +3,22 @@ $(function() {
 	$("#btn-next").hide();	
 });
 
-function searchItems(offset, item) {
+function searchItems(offset, item, favouriteUrl) {
 	var search = $.get("https://api.mercadolibre.com/sites/MLA/search",
 						{q: item,
 						offset: offset,
 						limit: 9,
 						condition: "new",
 						buying_mode: "buy_it_now"});
-	search.done(showResults);
+	search.done(function(data){
+		showResults(data, favouriteUrl, item)
+	});
 	search.fail(showError);
 };
 
-function showResults(data) {
+function showResults(data,favouriteUrl, item) {
 	$("#search_result").empty();
-
 	var super_promise = fetchItemData(data);
-
 	super_promise.done(function() {
 		if (data.paging.offset > 0) {
 			$("#btn-previous").show();
@@ -43,15 +43,17 @@ function showResults(data) {
 		searchItems(data.paging.offset - 9, data.query);
 	});
 
-/*	$("#btn-favourite").off("click").click(function() {
+	$("#btn-favourite").off("click").click(function() {
 		$.ajax({
 			method:"POST",
-			url: ,
+			url: favouriteUrl,
+			data: {"query":item},
 			success: function(){
-
+				alert("Favoriteado!");
+				//Convertir boton de favorito a boton de favoriteado
 			}
 		});
-	});*/
+	});
 };
 
 function fetchItemData(data) {

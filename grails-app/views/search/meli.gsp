@@ -91,7 +91,7 @@
 		</script>
 
 		<script type="text/javascript">
-			searchItems(0, "${search}");
+			searchItems(0, "${search}", "${createLink(controller:'search', action:'favourite')}");
 		</script>
 	</body>
 </html>

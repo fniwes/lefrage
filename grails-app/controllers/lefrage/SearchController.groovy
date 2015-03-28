@@ -25,7 +25,9 @@ class SearchController {
     	[search: params.item_search, optionName: params.optionName, optionValue: params.optionValue]
     }
 
-    def favourite(queryString){
-        searchService.favourite(queryString)
+    def favourite(){
+        println params
+        searchService.favourite(params.query)
+        render "okk"
     }
 }
