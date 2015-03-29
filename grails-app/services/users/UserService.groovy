@@ -43,12 +43,16 @@ class UserService {
     	def currentSpringUser = springSecurityService.currentUser
         def currentUser = User.findBySpringUser(currentSpringUser)
 
-        for (friend in currentUser.friends) {
-        	currentUser.removeFromFriends(friend )
+        SpringUserRole.removeAll(currentSpringUser, true)
+
+        for(friend in currentUser.sentRequests) {
+            friend.removeFromPendingRequests(currentUser)
         }
 
-        SpringUserRole.removeAll(currentSpringUser, true)
-        
+        for(friend in currentUser.friends) {
+            friend.removeFromFriends(currentUser)
+        }
+
         currentUser.delete(flush: true, failOnError: true)
         currentSpringUser.delete(flush: true, failOnError: true)
     }
