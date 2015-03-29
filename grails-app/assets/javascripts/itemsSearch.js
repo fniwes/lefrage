@@ -50,6 +50,7 @@ function showResults(data,favouriteUrl, item) {
 			data: {"query":item},
 			success: function(){
 				alert("Favoriteado!");
+				$("#btn-favourite").addClass("next-selected")
 				//Convertir boton de favorito a boton de favoriteado
 			}
 		});

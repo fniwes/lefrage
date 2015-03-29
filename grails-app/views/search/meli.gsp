@@ -3,6 +3,17 @@
 	<head>
 		<meta name="layout" content="main"/>
 		<title>Busqueda Regalo</title>
+		<style>
+			.next .next-selected{
+				background-color: #337AB7;
+				color:white;
+				border-color:#23527C;
+			}
+			.next .next-selected:hover, .next .next-selected:focus{
+				background-color: #23527C;
+			}
+
+		</style>
 	</head>
 	
 	<body>
@@ -18,7 +29,7 @@
 					<a id="btn-next" href="#">Siguiente<span aria-hidden="true">&rarr;</span></a>
 				</li>
 				<li class="next">
-					<a id="btn-favourite" href="#">Favoritear<span aria-hidden="true"></span></a>
+					<a id="btn-favourite" href="#"><span class="fa fa-heart"></span></a>
 				</li>
 			</ul> <!-- /ul -->
 		</nav> <!-- /nav -->
