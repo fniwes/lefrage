@@ -20,7 +20,7 @@
 					<g:formatDate date="${profileDOB}" format="yyyy-MM-dd"/>
 				</h3>
 				<h3 style="margin-top:5px">
-					<a href="lefrage/${username}">
+					<a href="/lefrage/${username}/amigos">
 						Amigos: ${profileFriendsCount}
 					</a>
 				</h3>
