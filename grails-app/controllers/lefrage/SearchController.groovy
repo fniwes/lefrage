@@ -26,7 +26,6 @@ class SearchController {
     }
 
     def favourite(){
-        println params
         searchService.favourite(params.query)
         render "okk"
     }

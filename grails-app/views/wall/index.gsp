@@ -24,7 +24,7 @@
 					Amigos: ${profileFriendsCount}
 				</h3>
 					<g:if test="${isAutoPost}">
-					<a href="/lefrage/${username}/busquedas" class="btn btn-default mlblue-btn" style="margin-top:0px; width:100%; margin-top:10px">
+					<a href="${createLink(controller: 'wall', action:'searches')}" class="btn btn-default mlblue-btn" style="margin-top:0px; width:100%; margin-top:10px">
 						Mis búsquedas
 					</a>
 				</g:if>

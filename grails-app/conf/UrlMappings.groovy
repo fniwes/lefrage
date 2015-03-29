@@ -9,6 +9,7 @@ class UrlMappings {
 
         "/$username/perfil"(controller: "wall", action: "index")
         "/$username/amigos"(controller: "friends", action: "index")
+        "/$username/busquedas"(controller: "wall", action: "searches")
         "/"(view:"/index")
         "500"(view:'/error')
 	}

@@ -17,7 +17,7 @@ class WallController {
     	def currentUser = User.findBySpringUser(currentSpringUser)
 
       // currentUser no puede acceder a user si no son amigos
-      if (user.friends.find{it == currentUser} == null) {
+      if (!(user.friends.find{it == currentUser}) && user != currentUser) {
         render("No sos amigo")
         sleep(1000)
         //redirect(controller: "wall", action: "index")
@@ -56,6 +56,9 @@ class WallController {
 
       	redirect(controller: "Wall", action: "index", params: params)
 
+    }
+
+    def searches(){ 
     }
 
 }
