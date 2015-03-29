@@ -59,6 +59,11 @@ class WallController {
     }
 
     def searches(){ 
+      def springUser = SpringUser.findByUsername(params.username)
+      def user = User.findBySpringUser(springUser)
+      def currentSpringUser = springSecurityService.currentUser
+      def currentUser = User.findBySpringUser(currentSpringUser)
+      [name:user.name, surname: user.surname]
     }
 
 }
