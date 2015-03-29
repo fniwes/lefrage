@@ -13,8 +13,10 @@
 		</style>
 	</head>
 	<body>
-		<div class="well well-lg">
-			Hola Mundo!
-		</div>
+		<g:each var="search" in="${searches}">
+			<div class="well well-lg">
+				${search.queryString}
+			</div>
+		</g:each>
 	</body>
 </html>
