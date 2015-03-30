@@ -8,8 +8,6 @@ class Product {
 
 	String productPrice
 
-	static belongsTo = [post: Post]
-
     static constraints = {
     }
 }

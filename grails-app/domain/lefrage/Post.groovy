@@ -16,7 +16,11 @@ class Post {
 	// [TODO] like
 
     static constraints = {
-		content blank: false
+    	/*
+		content validator: {
+			return product == null ? content != null : true
+			//return product?:content // much groovy
+		}*/
 		product nullable: true
     }
 

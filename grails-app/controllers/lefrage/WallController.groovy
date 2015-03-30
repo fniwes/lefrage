@@ -4,10 +4,14 @@ import grails.plugin.springsecurity.annotation.*
 import security.*
 import org.springframework.security.core.context.SecurityContextHolder // necessary to obtain current user
 
+import wall.PostService
+
 @Secured(['ROLE_USER'])
 class WallController {
    	
    	def springSecurityService
+
+    def postService
 
     def index() { 
 
@@ -36,25 +40,19 @@ class WallController {
     }
 
     def writePost() {
-    	def urlSpringUser = SpringUser.findByUsername(params.username)
-    	def wallOwner = User.findBySpringUser(urlSpringUser)
 
       def currentSpringUser = springSecurityService.currentUser
       def loggedUser = User.findBySpringUser(currentSpringUser)
 
-      	Date newDate = new Date()
-      	def newPost = new Post(
-        	content: params.HTMLpostContent,
-        	date: newDate,
-        	author: loggedUser,
-          containingWallUser: wallOwner
-     	)
+      def prodContent = params.jsProdContent
 
-        newPost.save(flush: true, failOnError: true)
-        wallOwner.addToWallPosts(newPost)
-        //wallOwner.save(flush: true, failOnError: true)
-
-      	redirect(controller: "Wall", action: "index", params: params)
+      if (prodContent != null) {
+        postService.productPost(prodContent, loggedUser)
+        render "ignore"
+      } else {
+    	  postService.textPost(loggedUser, params.username, params.HTMLpostContent)
+        redirect(controller: "wall", action: "index", params: params)
+      }
 
     }
 
