@@ -5,7 +5,7 @@ class Post {
 
 	String content
 
-	String itemID // can be null; in the case of product sharing
+	Product product
 
 	Date date
 
@@ -17,7 +17,7 @@ class Post {
 
     static constraints = {
 		content blank: false
-		itemID nullable: true
+		product nullable: true
     }
 
 }
