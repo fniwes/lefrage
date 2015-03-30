@@ -17,13 +17,11 @@ class SettingsController {
     	[user: currentUser]
     }
 
-    @Secured(['permitAll'])
     def deleteUser(){
         userService.delete()
         render "okk"
     }
 
-	@Secured(['permitAll'])
     def updateUser() {
         userService.update(params.name, params.surname, params.date, params.password)
         redirect(controller: "settings", action: "index")
