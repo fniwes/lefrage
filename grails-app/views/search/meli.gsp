@@ -77,16 +77,13 @@
 		</script>
 		
 		<script id="post_item_template" type="text/template">
-			<article class="col-md-6 search-item">
+			<div class="col-md-6 search-item">
 					<img src="#urlImg" width="100%" height="200">
-		    </article>
-			<article class="col-md-6 search-item">
-		    	<div class="caption">
+		    </div>
+			<div class="col-md-6 search-item">
 		        	<h3>#itemTitle</h3>
 		        	<p>$ #itemPrice</p>
-		    	</div> <!-- /caption -->
-		    </article>
-		    
+		    </div>
 		</script>
 
 		<script id="error_search" type="text/template">
