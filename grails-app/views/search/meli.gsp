@@ -6,23 +6,23 @@
 	</head>
 	
 	<body>
-		<div id="search_result"class="container marketing" style="width: 70%">
+		<div id="search_result" class="container marketing" style="width: 70%">
 		</div><!-- /container marketing -->
 
 		<nav>
 			<ul class="pager">
 				<li class="previous">
-					<a id="btn-previous" href="#"><span aria-hidden="true">&larr;</span>Anterior</a>
+					<a id="btn-previous"><span aria-hidden="true">&larr;</span>Anterior</a>
 				</li>
 				<li class="next">
-					<a id="btn-next" href="#">Siguiente<span aria-hidden="true">&rarr;</span></a>
+					<a id="btn-next">Siguiente<span aria-hidden="true">&rarr;</span></a>
 				</li>
 				<li class="next">
 					<g:if test="${!favourited}">
-						<a id="btn-favourite" href="#">
+						<a id="btn-favourite" style="margin-right:5px;">
 					</g:if>
 					<g:else>
-						<a id="btn-favourite" class="next-selected" href="#">
+						<a id="btn-favourite" class="next-selected" style="margin-right:5px;">
 					</g:else>
 						<span class="fa fa-heart"></span>
 					</a>
@@ -77,16 +77,13 @@
 		</script>
 		
 		<script id="post_item_template" type="text/template">
-			<article class="col-md-6 search-item">
+			<div class="col-md-6 search-item">
 					<img src="#urlImg" width="100%" height="200">
-		    </article>
-			<article class="col-md-6 search-item">
-		    	<div class="caption">
+		    </div>
+			<div class="col-md-6 search-item">
 		        	<h3>#itemTitle</h3>
 		        	<p>$ #itemPrice</p>
-		    	</div> <!-- /caption -->
-		    </article>
-		    
+		    </div>
 		</script>
 
 		<script id="error_search" type="text/template">

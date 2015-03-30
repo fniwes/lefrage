@@ -8,7 +8,7 @@ function searchItems(offset, item, favouriteUrl) {
 	var search = $.get("https://api.mercadolibre.com/sites/MLA/search",
 						{q: item,
 						offset: offset,
-						limit: 9,
+						limit: 51,
 						condition: "new",
 						buying_mode: "buy_it_now"});
 	search.done(function(data){
@@ -25,30 +25,36 @@ function showResults(data, favouriteUrl, item) {
 			$("#btn-previous").show();
 		} else {
 			$("#btn-previous").hide();	
-		};
+		}
 
-		if (data.paging.offset > data.paging.total - 9) {
+		if (data.paging.offset > data.paging.total - 51) {
 			$("#btn-next").hide();
-			$("#btn-favourite").hide();
 		} else {
 			$("#btn-next").show();
-			$("#btn-favourite").show();
-		};
+		}
+		
+		$("#btn-favourite").show();
 	});
 
+	
 	$("#btn-next").off("click").click(function() {
-		searchItems(data.paging.offset + 9, data.query);
+		searchItems(data.paging.offset + 51, data.query);
 	});
 
 	$("#btn-previous").off("click").click(function() {
-		searchItems(data.paging.offset - 9, data.query);
+		searchItems(data.paging.offset - 51, data.query);
 	});
 
 	$("#btn-favourite").off("click").click(function() {
+		//TODO hacer que se guarden los stats en el controller
+		var info = { "query": item, "products": data.results };
+		console.log(info.products);
+		var infoStr = JSON.stringify(info);
+		console.log(info);
 		$.ajax({
 			method:"POST",
 			url: favouriteUrl,
-			data: {"query":item},
+			data: {"infoStr": infoStr},
 			success: function(){
 				if(!favourited){
 					$("#btn-favourite").addClass("next-selected");

@@ -8,6 +8,21 @@ function completePostTemplate(urlImg, itemTitle, itemPrice) {
 	$("#post_result").append(template);
 };
 
-function postProduct(urlImg, itemTitle, itemPrice) {
+function postProduct() {
+	var productJSON = {
+		text:  $("#postModal postContent").text(),
+		title: $("#post_result h3").text(),
+		price: $("#post_result p").text(),
+		image: $("#post_result img").attr("src")
+	};
+
+	var urlController = '${createLink(controller: "wall", action: "writePost")}'
+	$.ajax({
+		url: urlController,
+		data: productJSON,
+		success: function() {
+
+		}
+	});
 
 };

@@ -165,8 +165,9 @@
 	.next .next-selected{
 		background-color: #337AB7;
 		color:white;
-		border-color:#23527C;
+		border-color:#337AB7;
 	}
 	.next .next-selected:hover, .next .next-selected:focus{
 		background-color: #23527C;
+		border-color:#23527C;
 	}

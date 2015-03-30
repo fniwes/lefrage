@@ -1,31 +1,32 @@
 package lefrage
 
 
+
 class Stat {
 	Date date
 	float mean, deviation, max, min
 	int sales
 		
-	float calcMean(prices) { 
+	Stat calcMean(prices) { 
 		def n = prices.size()
 		mean = prices.sum() / n
-		mean
+		return this
 	}
 
-	float calcDeviation(prices) {
+	Stat calcDeviation(prices) {
 		def pricesSquared = prices.collect { it**2 }
-		deviation = sqrt( calcMean(pricesSquared) - calcMean(prices)**2 )
-		deviation
+		deviation = Math.sqrt( pricesSquared.sum()/pricesSquared.size() - (prices.sum()/prices.size())**2)
+		return this
 	}
 
-	float calcMax(prices) {
+	Stat calcMax(prices) {
 		max = prices.max()
-		max
+		return this
 	}
 
-	float calcMin(prices) {
+	Stat calcMin(prices) {
 		min = prices.min()
-		min
+		return this
 	}
 
     static constraints = {
