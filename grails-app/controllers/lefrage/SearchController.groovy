@@ -22,7 +22,11 @@ class SearchController {
     }
 
     def meli(){
-    	[search: params.item_search, optionName: params.optionName, optionValue: params.optionValue]
+        def currentSpringUser = springSecurityService.currentUser
+        def user = User.findBySpringUser(currentSpringUser)
+        def favourited = user.queries.find{it.queryString==params.item_search} != null
+    	[search: params.item_search, optionName: params.optionName, 
+            optionValue: params.optionValue, favourited: favourited] 
     }
 
     def favourite(){

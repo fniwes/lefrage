@@ -1,6 +1,7 @@
 $(function() {
 	$("#btn-previous").hide();	
-	$("#btn-next").hide();	
+	$("#btn-next").hide();
+	$("#btn-favourite").hide();	
 });
 
 function searchItems(offset, item, favouriteUrl) {
@@ -16,7 +17,7 @@ function searchItems(offset, item, favouriteUrl) {
 	search.fail(showError);
 };
 
-function showResults(data,favouriteUrl, item) {
+function showResults(data, favouriteUrl, item) {
 	$("#search_result").empty();
 	var super_promise = fetchItemData(data);
 	super_promise.done(function() {
@@ -49,9 +50,16 @@ function showResults(data,favouriteUrl, item) {
 			url: favouriteUrl,
 			data: {"query":item},
 			success: function(){
-				alert("Favoriteado!");
-				$("#btn-favourite").addClass("next-selected")
-				//Convertir boton de favorito a boton de favoriteado
+				if(!favourited){
+					$("#btn-favourite").addClass("next-selected");
+					favourited=true;
+					alert("Favoriteado!");
+				}
+				else{
+					$("#btn-favourite").removeClass("next-selected");
+					favourited=false;
+					alert("Desfavoriteado");
+				}
 			}
 		});
 	});

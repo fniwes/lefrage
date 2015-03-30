@@ -16,9 +16,16 @@ class SearchService {
     }
 
     def favourite(queryString){
-    	def query = new Query(queryString: queryString)
         def currentSpringUser = springSecurityService.currentUser
         def currentUser = User.findBySpringUser(currentSpringUser)
-        currentUser.addToQueries(query)
+    	def query = currentUser.queries.find{it.queryString==queryString}
+        if(!query){
+            query = new Query(queryString: queryString)
+            currentUser.addToQueries(query)    
+        }
+        else{
+            currentUser.removeFromQueries(query)
+            query.delete()
+        }
     }
 }
