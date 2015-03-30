@@ -15,7 +15,7 @@ class SearchService {
         return User.findAllByNameLikeOrSurnameLike("%"+query+"%", "%"+query+"%")
     }
 
-    def favourite(queryString){
+    def favourite(queryString, products){
         def currentSpringUser = springSecurityService.currentUser
         def currentUser = User.findBySpringUser(currentSpringUser)
     	def query = currentUser.queries.find{it.queryString==queryString}
@@ -27,5 +27,11 @@ class SearchService {
             currentUser.removeFromQueries(query)
             query.delete()
         }
+        def stat = new Stat(date:new Date())
+            .calcMean(products.price)
+            .calcDeviation(products.price)
+            .calcMax(products.price)
+            .calcMin(products.price)
+        stat.save(flush:true,failOnError:true)
     }
 }

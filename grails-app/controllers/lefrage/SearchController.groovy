@@ -1,8 +1,10 @@
 package lefrage
+
 import grails.plugin.springsecurity.annotation.*
 import security.*
 import lefrage.User
 import searchs.SearchService
+import groovy.json.JsonSlurper
 
 @Secured(['ROLE_USER'])
 class SearchController {
@@ -30,7 +32,9 @@ class SearchController {
     }
 
     def favourite(){
-        searchService.favourite(params.query)
+        def slurper = new JsonSlurper()
+        def params = slurper.parseText(params.infoStr)
+        searchService.favourite(params.query, params.products)
         render "okk"
     }
 }
