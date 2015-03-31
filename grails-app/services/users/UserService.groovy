@@ -31,9 +31,8 @@ class UserService {
         currentUser.surname = surname
 
         if(password) {
-            def springUser = currentUser.springUser
-            springUser.password = password
-            springUser.save(failOnError: true)
+            currentSpringUser.password = password
+            currentSpringUser.save(failOnError: true)
         }
 
         currentUser.save(failOnError: true)
